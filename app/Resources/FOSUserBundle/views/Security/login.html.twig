@@ -1,5 +1,8 @@
-{% extends "@FOSUser/layout.html.twig" %}
+{% extends "security_layout.html.twig" %}
 
-{% block fos_user_content %}
+{% block body %}
+<div class="login-box-body">
+    <p class="login-box-msg">Connexion</p>
     {{ include('@FOSUser/Security/login_content.html.twig') }}
-{% endblock fos_user_content %}
+</div>
+{% endblock body %}

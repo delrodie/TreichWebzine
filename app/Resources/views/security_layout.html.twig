@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+
+    <title>{% block title %}Securite{% endblock %} </title>
+  
+  {% stylesheets
+        'backend/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css'
+        'backend/css/master_style.css'
+        'backend/css/skins/_all-skins.css'
+        'backend/assets/fontawesome/css/all.min.css'
+        filter='cssrewrite' output='backend/css/style.css'
+         %}
+        <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
+    {% endstylesheets %}
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body class="hold-transition login-page" style="background: url(asset('backend/images/login-register.jpg')) center center no-repeat #d2d6de;">
+<div class="login-box">
+  <div class="login-logo" style="font-weight:bold;">
+    <a href="#">AKA CHARLES</a>
+  </div>
+  <!-- /.login-logo -->
+  {% block body %}{% endblock %}
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+    {% javascripts 
+        'backend/assets/vendor_components/jquery/dist/jquery.min.js'
+        'backend/assets/vendor_components/popper/dist/popper.min.js'
+        'backend/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js'
+        output='backend/js/applogin.js'
+    %}
+    <script src="{{ absolute_url(asset_url)}}"></script>
+    {% endjavascripts %}
+
+</body>
+
+</html>
