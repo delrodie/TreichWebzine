@@ -20,7 +20,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/backend", name="backend")
+     * @Route("/backend/dashboard", name="backend")
      */
     public function backendAction()
     {
