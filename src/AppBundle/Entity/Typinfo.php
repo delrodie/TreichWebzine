@@ -37,6 +37,11 @@ class Typinfo
     private $statut;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Information", mappedBy="typinfo")
+     */
+    private $informations;
+
+    /**
      * @var string
      *
      * @Gedmo\Slug(fields={"libelle"})
@@ -253,5 +258,46 @@ class Typinfo
     public function getModifieLe()
     {
         return $this->modifieLe;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->informations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add information
+     *
+     * @param \AppBundle\Entity\Information $information
+     *
+     * @return Typinfo
+     */
+    public function addInformation(\AppBundle\Entity\Information $information)
+    {
+        $this->informations[] = $information;
+
+        return $this;
+    }
+
+    /**
+     * Remove information
+     *
+     * @param \AppBundle\Entity\Information $information
+     */
+    public function removeInformation(\AppBundle\Entity\Information $information)
+    {
+        $this->informations->removeElement($information);
+    }
+
+    /**
+     * Get informations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInformations()
+    {
+        return $this->informations;
     }
 }
