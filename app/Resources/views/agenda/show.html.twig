@@ -1,0 +1,61 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent () }} {{ agenda.titre }}{% endblock %}
+
+{% block body %}
+<section class="content-header">
+      <h1>{{ agenda.titre }}</h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_agenda_index'))}}">agendas</a></li>
+        <li class="breadcrumb-item active">{{ agenda.titre }}</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+     
+       <div class="box box-warning">
+            <div class="box-header text-right">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="{{ absolute_url(path('backend_agenda_edit', {'slug': agenda.slug})) }}" >
+                    <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier</button>
+                </a>
+                <a href="{{ absolute_url(path('backend_agenda_index')) }}" >
+                    <button type="button" class="btn btn-default"><i class="fa fa-list"></i> Liste des agendas</button>
+                </a>
+                
+                    {{ form_start(delete_form, {'attr': {'onsubmit': 'return confirm("Êtes-vous sur de vouloir supprimer cet article ?");'}}) }}
+                        <button type="submit" value="Supprimer" class="btn btn-danger">
+                            <i class="fa fa-trash"></i> Supprimer
+                        </button>
+                    {{ form_end(delete_form) }}
+              </div>
+            </div>
+
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="box box-default">
+              <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(agenda, 'imageFile') }}" alt="{{ agenda.titre }}">
+            <div class="box-body">          	
+				<h4 class="card-title">
+				{% if agenda.statut %}
+                    <span class="badge badge-primary">{{ agenda.typeevent.libelle }}</span>
+                    <span class="badge badge-success">Actif</span>
+                {% else %}
+                    <span class="badge badge-primary">{{ agenda.typeevent.libelle }}</span>
+                    <span class="badge badge-danger">Désactivé</span>
+                {% endif %}
+                {{ agenda.titre }}
+                </h4>
+				<p class="card-text">{{ agenda.contenu|raw }}</p>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        
+      </div>
+
+    </section>
+{% endblock %}

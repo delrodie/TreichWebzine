@@ -10,4 +10,13 @@ namespace AppBundle\Repository;
  */
 class TypeEventRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * Liste decroissante des type d'events
+     */
+    public function findTypeEventDESC()
+    {
+        return $this->createQueryBuilder('t')
+                    ->orderBy('t.libelle', 'DESC')
+        ;
+    }
 }

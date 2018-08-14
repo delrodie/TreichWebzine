@@ -37,6 +37,11 @@ class TypeEvent
     private $statut;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Agenda", mappedBy="typeevent")
+     */
+    private $agendas;
+
+    /**
      * @var string
      *
      * @Gedmo\Slug(fields={"libelle"})
@@ -253,5 +258,46 @@ class TypeEvent
     public function getModifieLe()
     {
         return $this->modifieLe;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->agendas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add agenda
+     *
+     * @param \AppBundle\Entity\Agenda $agenda
+     *
+     * @return TypeEvent
+     */
+    public function addAgenda(\AppBundle\Entity\Agenda $agenda)
+    {
+        $this->agendas[] = $agenda;
+
+        return $this;
+    }
+
+    /**
+     * Remove agenda
+     *
+     * @param \AppBundle\Entity\Agenda $agenda
+     */
+    public function removeAgenda(\AppBundle\Entity\Agenda $agenda)
+    {
+        $this->agendas->removeElement($agenda);
+    }
+
+    /**
+     * Get agendas
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAgendas()
+    {
+        return $this->agendas;
     }
 }
