@@ -37,6 +37,11 @@ class TypeActualite
     private $statut;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Actualite", mappedBy="type")
+     */
+    private $actualites;
+
+    /**
      * @var string
      *
      * @Gedmo\Slug(fields={"libelle"})
@@ -253,5 +258,46 @@ class TypeActualite
     public function getModifieLe()
     {
         return $this->modifieLe;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->actualites = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add actualite
+     *
+     * @param \AppBundle\Entity\Actualite $actualite
+     *
+     * @return TypeActualite
+     */
+    public function addActualite(\AppBundle\Entity\Actualite $actualite)
+    {
+        $this->actualites[] = $actualite;
+
+        return $this;
+    }
+
+    /**
+     * Remove actualite
+     *
+     * @param \AppBundle\Entity\Actualite $actualite
+     */
+    public function removeActualite(\AppBundle\Entity\Actualite $actualite)
+    {
+        $this->actualites->removeElement($actualite);
+    }
+
+    /**
+     * Get actualites
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getActualites()
+    {
+        return $this->actualites;
     }
 }

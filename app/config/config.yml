@@ -133,6 +133,15 @@ vich_uploader:
             delete_on_update:   true
             delete_on_remove:   true
 
+        actualite_image:
+            uri_prefix:         /uploads/actualite
+            upload_destination: '%kernel.root_dir%/../web/uploads/actualite'
+            namer: vich_uploader.namer_origname
+
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+
 liip_imagine:
     resolvers:
         default:

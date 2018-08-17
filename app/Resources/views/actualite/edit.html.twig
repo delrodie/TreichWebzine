@@ -1,0 +1,108 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent() }} Modification des actualites du blog{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+      <h1>Modification d'actualite</h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_actualite_index'))}}">actualite</a></li>
+        <li class="breadcrumb-item active">Modification d'actualite</li>
+      </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="box box-warning">
+            <div class="box-header text-right">
+              <a href="{{ absolute_url(path('backend_actualite_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des actualites</a>
+            </div>
+            <div class="box-body">
+              <div class="row justify-content-center">
+                <div class="col-12">
+                    {{ form_start(edit_form, {'attr':{'class':'form-horizontal'}}) }}
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="col-sm-12 control-label text-left">Type</label>
+                                    <div class="col-sm-12">
+                                        {{ form_widget(edit_form.type)}}
+                                        <span class="help-block">{{ form_errors(edit_form.type)}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-12 control-label text-left">Titre</label>
+                                    <div class="col-sm-12">
+                                        {{ form_widget(edit_form.titre)}}
+                                        <span class="help-block">{{ form_errors(edit_form.titre)}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-12 control-label text-left">Mots clés</label>
+                                    <div class="col-sm-12">
+                                        {{ form_widget(edit_form.tags)}}
+                                        <span class="help-block">{{ form_errors(edit_form.tags)}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-12 control-label text-left">Telecharger l'illustration</label>
+                                    <div class="col-sm-12">
+                                        {{ form_widget(edit_form.imageFile)}}
+                                        <span class="help-block">{{ form_errors(edit_form.imageFile)}}</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12 control-label text-left"></div>
+                                    <div class="checkbox col-sm-12">
+                                        {{ form_widget(edit_form.statut)}}
+                                        <label for="appbundle_actualite_statut">Activé</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                <div class="form-group">
+                                    <label for="" class="col-sm-12 control-label text-left">Contenu</label>
+                                    <div class="col-sm-12">
+                                        {{ form_widget(edit_form.contenu)}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{ form_rest(edit_form) }}
+                        <div class="box-footer text-right">
+                            <a href="{{ absolute_url(path('backend_actualite_index'))}}" class="btn btn-default">Annuler</a>
+                            <button type="submit" class="btn btn-info">Modifier</button>
+                        </div>
+                    {{ form_end(edit_form) }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    {% stylesheets
+        'backend/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css'
+        'backend/tags/tagsinput.css'
+        filter='cssrewrite' output='backend/css/editeur.css'
+         %}
+        <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent()}}
+    {% javascripts 
+        'backend/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js'
+        'backend/js/pages/editor.js'
+        'backend/tags/tagsinput.js'
+        output='backend/js/editeur.js'
+    %}  
+    <script src="{{ absolute_url(asset_url)}}"></script>
+    
+    {% endjavascripts %}
+{% endblock %}
