@@ -1,0 +1,101 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent()}} Gestion des rubriques de mairie{% endblock %}
+
+{% block body %}
+<section class="content-header">
+      <h1>Gestion des rubriques de mairie</h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_mairierubrique_index'))}}">rubriques de mairie</a></li>
+        <li class="breadcrumb-item active">Gestion</li>
+      </ol>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-6">
+            <div class="box">
+            <div class="box-header">
+               <h3> Liste des rubriques de mairie</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example" class="table table-bordered table-hover display nowrap margin-top-10 table-responsive" cellspacing="0" width="100%">
+        				<thead>
+        					<tr class="text-center">
+        						<th class="text-center">ID</th>
+        						<th class="text-center">LIBELLE</th>
+        						<th class="text-center">ACTIONS</th>
+        					</tr>
+        				</thead>
+        				<tbody>
+        					{% for mairieRubrique in mairieRubriques %}
+                                <tr>
+                                    <td class="text-right">{{ loop.index }}</td>
+                                    <td>{{ mairieRubrique.libelle }} {% if mairieRubrique.statut %}<span class="badge badge-success"> Actif</span>{% else %}<span class="badge badge-danger">Désactivé</span>{% endif %}</td>
+                                    <td class="text-center">
+                                        <a href="{{ absolute_url(path('backend_mairierubrique_edit', {'slug': mairieRubrique.slug })) }}" class="text-primary" title="Modifier/Supprimer"><i class="fa fa-edit"></i></a> |
+                                        <a href="#" class="text-primary" title="Voir les articles"><i class="fa fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="3" class="text-center">Aucune rubrique de mairie </td>
+                                </tr>
+                            {% endfor %}
+        				</tbody>
+        			</table>
+
+              
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+        <div class="col-6">
+            <div class="box">
+            <div class="box-header">
+               <h3> Modification</h3>
+            </div>
+            <div class="box-body">
+            {{ form_start(edit_form, {'attr':{'class':'form-horizontal'}}) }}
+                        <div class="form-group row">
+                            <label class="col-sm-10 control-label">Libelle</label>
+                            <div class="col-sm-10">
+                                {{ form_widget(edit_form.libelle)}}
+                                <span class="help-block">{{ form_errors(edit_form.libelle)}}</span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 control-label text-right"></div>
+                            <div class="checkbox col-sm-10">
+                                {{ form_widget(edit_form.statut)}}
+                                <label for="appbundle_mairierubrique_statut">Activé</label>
+                            </div>
+                        </div>
+                        {{ form_widget(edit_form) }}
+                        <div class="box-footer text-right">
+                            <a href="{{ absolute_url(path('backend_mairierubrique_index'))}}" class="btn btn-default">Annuler</a>
+                            <button type="submit" class="btn btn-info">Modifier</button>
+                        </div>
+            {{ form_end(edit_form) }}
+            </div>
+            
+          </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent ()}}
+    {% javascripts 
+        'backend/assassets/vendor_components/datatables.net/js/jquery.dataTables.min.js'
+        'backend/assets/vendor_plugins/DataTables-1.10.15/media/js/jquery.dataTables.min.js'
+        'backend/assets/vendor_plugins/DataTables-1.10.15/ex-js/jszip.min.js'
+        'backend/js/pages/data-table.js'
+        output='backend/js/table.js'
+    %}
+    <script src="{{ absolute_url(asset_url)}}"></script>
+    {% endjavascripts %}
+{% endblock %}
