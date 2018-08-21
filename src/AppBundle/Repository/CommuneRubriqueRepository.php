@@ -10,4 +10,13 @@ namespace AppBundle\Repository;
  */
 class CommuneRubriqueRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * Liste decroissante des rubriques
+     */
+    public function findRubriqueDESC()
+    {
+        return $this->createQueryBuilder('r')
+                    ->orderBy('r.id', 'DESC')
+        ;
+    }
 }

@@ -13,11 +13,11 @@
   
   {% block stylesheets %}
     	{% stylesheets
-        'backend/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css'
-        'backend/css/master_style.css'
-        'backend/css/skins/_all-skins.css'
-        'backend/assets/fontawesome/css/all.min.css'
-        filter='cssrewrite' output='backend/css/style.css'
+        'backoffice/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css'
+        'backoffice/css/master_style.css'
+        'backoffice/css/skins/_all-skins.css'
+        'backoffice/assets/fontawesome/css/all.min.css'
+        filter='cssrewrite' output='backoffice/css/style.css'
          %}
         <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
     {% endstylesheets %}
@@ -58,7 +58,7 @@
                   <li><!-- start message -->
                     <a href="#">
                       <div class="pull-left">
-                        <img src="{{ absolute_url(asset('backend/images/avatar.png'))}}" class="rounded-circle" alt="User Image">
+                        <img src="{{ absolute_url(asset('backoffice/images/avatar.png'))}}" class="rounded-circle" alt="User Image">
                       </div>
                       <div class="mail-contnet">
                          <h4>
@@ -78,7 +78,7 @@
           {% if is_granted('IS_AUTHENTICATED_FULLY') %}
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="{{ absolute_url(asset('backend/images/avatar.png'))}}" class="user-image rounded-circle" alt="{{ app.user.username }}">
+              <img src="{{ absolute_url(asset('backoffice/images/avatar.png'))}}" class="user-image rounded-circle" alt="{{ app.user.username }}">
               <span class="d-none d-sm-inline-block">{{ app.user.username|title }}</span>
             </a>
             <ul class="dropdown-menu scale-up">
@@ -104,10 +104,10 @@
   
   <aside class="main-sidebar">
     <section class="sidebar">
-      <div class="user-panel" style="background-image: url({{ absolute_url(asset('backend/images/user-info.jpg'))}});">
+      <div class="user-panel" style="background-image: url({{ absolute_url(asset('backoffice/images/user-info.jpg'))}});">
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <div class="image">
-          <img src="{{ absolute_url(asset('backend/images/avatar.png'))}}" class="rounded-circle" alt="{{ app.user.username }}">
+          <img src="{{ absolute_url(asset('backoffice/images/avatar.png'))}}" class="rounded-circle" alt="{{ app.user.username }}">
         </div>
         <div class="info">
           <p></p>
@@ -167,7 +167,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ absolute_url(path('homepage'))}}"><i class="fa fa-user-tie"></i> Deputé</a></li>
-            <li><a href="{{ absolute_url(path('homepage'))}}"><i class="fa fa-newspaper"></i> Commune</a></li>
+            <li><a href="{{ absolute_url(path('backend_commune_index'))}}"><i class="fa fa-newspaper"></i> Commune</a></li>
             <li><a href="{{ absolute_url(path('homepage'))}}"><i class="fa fa-newspaper"></i> Mairie</a></li>
             <li><a href="{{ absolute_url(path('homepage'))}}"><i class="fa fa-newspaper"></i> Mediatheque</a></li>
           </ul>
@@ -249,14 +249,14 @@
 
     {% block javascripts %}
       {% javascripts 
-          'backend/assets/vendor_components/jquery/dist/jquery.min.js'
-          'backend/assets/vendor_components/popper/dist/popper.min.js'
-          'backend/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js'
-          'backend/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js'
-          'backend/assets/vendor_components/fastclick/lib/fastclick.js'
-          'backend/js/template.js'
-          'backend/js/demo.js'
-          output='backend/js/app.js'
+          'backoffice/assets/vendor_components/jquery/dist/jquery.min.js'
+          'backoffice/assets/vendor_components/popper/dist/popper.min.js'
+          'backoffice/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js'
+          'backoffice/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.min.js'
+          'backoffice/assets/vendor_components/fastclick/lib/fastclick.js'
+          'backoffice/js/template.js'
+          'backoffice/js/demo.js'
+          output='backoffice/js/app.js'
       %}
       <script src="{{ absolute_url(asset_url)}}"></script>
       {% endjavascripts %}

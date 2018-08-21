@@ -27,7 +27,7 @@
               {% if information.imageName %}
                   <img class="card-img-top img-responsive" src="{{ asset('uploads/information/'~ information.imageName) | imagine_filter('backend_information') }}" alt="{{ information.titre }}" />
               {% else %}
-                  <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backend/images/user-info.jpg')) }}" alt="{{ information.titre }}">
+                  <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/user-info.jpg')) }}" alt="{{ information.titre }}">
               {% endif %}
                 <div class="box-body">            	
                     <h4 class="card-title">

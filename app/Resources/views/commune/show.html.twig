@@ -1,14 +1,14 @@
 {% extends 'backend.html.twig' %}
 
-{% block title %}{{ parent () }} {{ information.titre }}{% endblock %}
+{% block title %}{{ parent () }} {{ commune.titre }}{% endblock %}
 
 {% block body %}
 <section class="content-header">
-      <h1>{{ information.titre }}</h1>
+      <h1>{{ commune.titre }}</h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
-        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_information_index'))}}">informations</a></li>
-        <li class="breadcrumb-item active">{{ information.titre }}</li>
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_commune_index'))}}">communes</a></li>
+        <li class="breadcrumb-item active">{{ commune.titre }}</li>
       </ol>
     </section>
 
@@ -18,11 +18,11 @@
        <div class="box box-warning">
             <div class="box-header text-right">
               <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="{{ absolute_url(path('backend_information_edit', {'slug': information.slug})) }}" >
+                <a href="{{ absolute_url(path('backend_commune_edit', {'slug': commune.slug})) }}" >
                     <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier</button>
                 </a>
-                <a href="{{ absolute_url(path('backend_information_index')) }}" >
-                    <button type="button" class="btn btn-default"><i class="fa fa-list"></i> Liste des informations</button>
+                <a href="{{ absolute_url(path('backend_commune_index')) }}" >
+                    <button type="button" class="btn btn-default"><i class="fa fa-list"></i> Liste des communes</button>
                 </a>
                 
                     {{ form_start(delete_form, {'attr': {'onsubmit': 'return confirm("Êtes-vous sur de vouloir supprimer cet article ?");'}}) }}
@@ -35,24 +35,24 @@
 
       <div class="row">
         <div class="col-md-12 col-lg-12">
-          <div class="box box-default">
-              {% if information.imageName %}
-                  <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(information, 'imageFile') }}" alt="{{ information.titre }}">
+          <div class="box box-default">              
+              {% if commune.imageName %}
+                  <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(commune, 'imageFile') }}" alt="{{ commune.titre }}">
               {% else %}
-                  <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/user-info.jpg')) }}" alt="{{ information.titre }}">
+                  <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/user-info.jpg')) }}" alt="{{ commune.titre }}">
               {% endif %}
             <div class="box-body">          	
 				<h4 class="card-title">
-				{% if information.statut %}
-                    <span class="badge badge-primary">{{ information.typinfo.libelle }}</span>
+				{% if commune.statut %}
+                    <span class="badge badge-primary">{{ commune.rubrique.libelle }}</span>
                     <span class="badge badge-success">Actif</span>
                 {% else %}
-                    <span class="badge badge-primary">{{ information.typinfo.libelle }}</span>
+                    <span class="badge badge-primary">{{ commune.rubrique.libelle }}</span>
                     <span class="badge badge-danger">Désactivé</span>
                 {% endif %}
-                {{ information.titre }}
+                {{ commune.titre }}
                 </h4>
-				<p class="card-text">{{ information.contenu|raw }}</p>
+				<p class="card-text">{{ commune.contenu|raw }}</p>
             </div>
             <!-- /.box-body -->
           </div>

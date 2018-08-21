@@ -37,6 +37,11 @@ class CommuneRubrique
     private $statut;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commune", mappedBy="rubrique")
+     */
+    private $communes;
+
+    /**
      * @var string
      *
      * @Gedmo\Slug(fields={"libelle"})
@@ -253,5 +258,46 @@ class CommuneRubrique
     public function getModifieLe()
     {
         return $this->modifieLe;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->communes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add commune
+     *
+     * @param \AppBundle\Entity\Commune $commune
+     *
+     * @return CommuneRubrique
+     */
+    public function addCommune(\AppBundle\Entity\Commune $commune)
+    {
+        $this->communes[] = $commune;
+
+        return $this;
+    }
+
+    /**
+     * Remove commune
+     *
+     * @param \AppBundle\Entity\Commune $commune
+     */
+    public function removeCommune(\AppBundle\Entity\Commune $commune)
+    {
+        $this->communes->removeElement($commune);
+    }
+
+    /**
+     * Get communes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommunes()
+    {
+        return $this->communes;
     }
 }

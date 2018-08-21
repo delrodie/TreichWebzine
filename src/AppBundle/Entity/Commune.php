@@ -8,13 +8,13 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
- * Agenda
+ * Commune
  *
- * @ORM\Table(name="agenda")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\AgendaRepository")
+ * @ORM\Table(name="commune")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CommuneRepository")
  * @Vich\Uploadable
  */
-class Agenda
+class Commune
 {
     /**
      * @var int
@@ -61,15 +61,15 @@ class Agenda
     private $statut;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TypeEvent", inversedBy="agendas")
-     * @ORM\JoinColumn(name="agenda_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\CommuneRubrique", inversedBy="communes")
+     * @ORM\JoinColumn(name="rubrique_id", referencedColumnName="id")
      */
-    private $typeevent;
+    private $rubrique;
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="agenda_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="commune_image", fileNameProperty="imageName", size="imageSize")
      *
      * @var File
      */
@@ -168,7 +168,6 @@ class Agenda
         return $this->imageFile;
     }
 
-
     /**
      * Get id
      *
@@ -184,7 +183,7 @@ class Agenda
      *
      * @param string $titre
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setTitre($titre)
     {
@@ -208,7 +207,7 @@ class Agenda
      *
      * @param string $contenu
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setContenu($contenu)
     {
@@ -232,7 +231,7 @@ class Agenda
      *
      * @param string $resume
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setResume($resume)
     {
@@ -256,7 +255,7 @@ class Agenda
      *
      * @param string $tags
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setTags($tags)
     {
@@ -280,7 +279,7 @@ class Agenda
      *
      * @param boolean $statut
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setStatut($statut)
     {
@@ -292,7 +291,7 @@ class Agenda
     /**
      * Get statut
      *
-     * @return bool
+     * @return boolean
      */
     public function getStatut()
     {
@@ -304,7 +303,7 @@ class Agenda
      *
      * @param string $imageName
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setImageName($imageName)
     {
@@ -328,7 +327,7 @@ class Agenda
      *
      * @param integer $imageSize
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setImageSize($imageSize)
     {
@@ -352,7 +351,7 @@ class Agenda
      *
      * @param \DateTime $updatedAt
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -376,7 +375,7 @@ class Agenda
      *
      * @param string $slug
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setSlug($slug)
     {
@@ -400,7 +399,7 @@ class Agenda
      *
      * @param string $publiePar
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setPubliePar($publiePar)
     {
@@ -424,7 +423,7 @@ class Agenda
      *
      * @param string $modifiePar
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setModifiePar($modifiePar)
     {
@@ -448,7 +447,7 @@ class Agenda
      *
      * @param \DateTime $publieLe
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setPublieLe($publieLe)
     {
@@ -472,7 +471,7 @@ class Agenda
      *
      * @param \DateTime $modifieLe
      *
-     * @return Agenda
+     * @return Commune
      */
     public function setModifieLe($modifieLe)
     {
@@ -492,26 +491,26 @@ class Agenda
     }
 
     /**
-     * Set typeevent
+     * Set rubrique
      *
-     * @param \AppBundle\Entity\TypeEvent $typeevent
+     * @param \AppBundle\Entity\CommuneRubrique $rubrique
      *
-     * @return Agenda
+     * @return Commune
      */
-    public function setTypeevent(\AppBundle\Entity\TypeEvent $typeevent = null)
+    public function setRubrique(\AppBundle\Entity\CommuneRubrique $rubrique = null)
     {
-        $this->typeevent = $typeevent;
+        $this->rubrique = $rubrique;
 
         return $this;
     }
 
     /**
-     * Get typeevent
+     * Get rubrique
      *
-     * @return \AppBundle\Entity\TypeEvent
+     * @return \AppBundle\Entity\CommuneRubrique
      */
-    public function getTypeevent()
+    public function getRubrique()
     {
-        return $this->typeevent;
+        return $this->rubrique;
     }
 }

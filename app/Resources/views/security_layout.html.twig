@@ -12,11 +12,11 @@
     <title>{% block title %}Securite{% endblock %} </title>
   
   {% stylesheets
-        'backend/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css'
-        'backend/css/master_style.css'
-        'backend/css/skins/_all-skins.css'
-        'backend/assets/fontawesome/css/all.min.css'
-        filter='cssrewrite' output='backend/css/style.css'
+        'backoffice/assets/vendor_components/bootstrap/dist/css/bootstrap.min.css'
+        'backoffice/css/master_style.css'
+        'backoffice/css/skins/_all-skins.css'
+        'backoffice/assets/fontawesome/css/all.min.css'
+        filter='cssrewrite' output='backoffice/css/style.css'
          %}
         <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
     {% endstylesheets %}
@@ -29,10 +29,10 @@
   <![endif]-->
 
 </head>
-<body class="hold-transition login-page" style="background: url(asset('backend/images/login-register.jpg')) center center no-repeat #d2d6de;">
+<body class="hold-transition login-page" style="background: url(asset('backoffice/images/login-register.jpg')) center center no-repeat #d2d6de;">
 <div class="login-box">
   <div class="login-logo" style="font-weight:bold;">
-    <a href="#">AKA CHARLES</a>
+    <a href="#">Treich Webzine</a>
   </div>
   <!-- /.login-logo -->
   {% block body %}{% endblock %}
@@ -41,10 +41,10 @@
 <!-- /.login-box -->
 
     {% javascripts 
-        'backend/assets/vendor_components/jquery/dist/jquery.min.js'
-        'backend/assets/vendor_components/popper/dist/popper.min.js'
-        'backend/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js'
-        output='backend/js/applogin.js'
+        'backoffice/assets/vendor_components/jquery/dist/jquery.min.js'
+        'backoffice/assets/vendor_components/popper/dist/popper.min.js'
+        'backoffice/assets/vendor_components/bootstrap/dist/js/bootstrap.min.js'
+        output='backoffice/js/applogin.js'
     %}
     <script src="{{ absolute_url(asset_url)}}"></script>
     {% endjavascripts %}

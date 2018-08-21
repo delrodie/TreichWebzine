@@ -86,9 +86,9 @@
 {% block stylesheets %}
     {{ parent()}}
     {% stylesheets
-        'backend/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css'
-        'backend/tags/tagsinput.css'
-        filter='cssrewrite' output='backend/css/editeur.css'
+        'backoffice/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css'
+        'backoffice/tags/tagsinput.css'
+        filter='cssrewrite' output='backoffice/css/editeur.css'
          %}
         <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
     {% endstylesheets %}
@@ -97,10 +97,10 @@
 {% block javascripts %}
     {{ parent()}}
     {% javascripts 
-        'backend/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js'
-        'backend/js/pages/editor.js'
-        'backend/tags/tagsinput.js'
-        output='backend/js/editeur.js'
+        'backoffice/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js'
+        'backoffice/js/pages/editor.js'
+        'backoffice/tags/tagsinput.js'
+        output='backoffice/js/editeur.js'
     %}  
     <script src="{{ absolute_url(asset_url)}}"></script>
     

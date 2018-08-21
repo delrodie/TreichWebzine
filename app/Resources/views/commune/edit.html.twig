@@ -1,21 +1,21 @@
 {% extends 'backend.html.twig' %}
 
-{% block title %}{{ parent() }} Modification des agendas du blog{% endblock %}
+{% block title %}{{ parent() }} Gestion de la commune {% endblock %}
 
 {% block body %}
     <section class="content-header">
-      <h1>Modification d'un agenda</h1>
+      <h1>Gestion de la commune</h1>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
-        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_agenda_index'))}}">agenda</a></li>
-        <li class="breadcrumb-item active">Modification d'un nouvel agenda</li>
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_commune_index'))}}">commune</a></li>
+        <li class="breadcrumb-item active">Gestion de la commune</li>
       </ol>
     </section>
     <section class="content">
         <div class="row">
             <div class="box box-warning">
             <div class="box-header text-right">
-              <a href="{{ absolute_url(path('backend_agenda_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des agendas</a>
+              <a href="{{ absolute_url(path('backend_commune_index'))}}" class="btn btn-social btn-primary"><i class="fa fa-list"></i>Liste des communes</a>
             </div>
             <div class="box-body">
               <div class="row justify-content-center">
@@ -24,10 +24,10 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
                                 <div class="form-group">
-                                    <label class="col-sm-12 control-label text-left">Type</label>
+                                    <label class="col-sm-12 control-label text-left">rubrique</label>
                                     <div class="col-sm-12">
-                                        {{ form_widget(edit_form.typeevent)}}
-                                        <span class="help-block">{{ form_errors(edit_form.typeevent)}}</span>
+                                        {{ form_widget(edit_form.rubrique)}}
+                                        <span class="help-block">{{ form_errors(edit_form.rubrique)}}</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -55,7 +55,7 @@
                                     <div class="col-sm-12 control-label text-left"></div>
                                     <div class="checkbox col-sm-12">
                                         {{ form_widget(edit_form.statut)}}
-                                        <label for="appbundle_agenda_statut">Activé</label>
+                                        <label for="appbundle_commune_statut">Activé</label>
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +70,7 @@
                         </div>
                         {{ form_rest(edit_form) }}
                         <div class="box-footer text-right">
-                            <a href="{{ absolute_url(path('backend_agenda_index'))}}" class="btn btn-default">Annuler</a>
+                            <a href="{{ absolute_url(path('backend_commune_index'))}}" class="btn btn-default">Annuler</a>
                             <button type="submit" class="btn btn-info">Modifier</button>
                         </div>
                     {{ form_end(edit_form) }}

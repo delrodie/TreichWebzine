@@ -9,6 +9,7 @@
 	//bootstrap WYSIHTML5 - text editor
     $('#appbundle_agenda_contenu').wysihtml5();	
     $('#appbundle_actualite_contenu').wysihtml5();	
+    $('#appbundle_commune_contenu').wysihtml5();	
     $('.contenu').wysihtml5();		
 	
   });

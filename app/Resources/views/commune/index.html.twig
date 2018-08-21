@@ -1,0 +1,61 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent () }} Liste des articles de presentation la commune{% endblock %}
+
+{% block body %}
+<section class="content-header">
+      <h1>Gestion de la commune</h1>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+        <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_commune_index'))}}">Treichville</a></li>
+        <li class="breadcrumb-item active">Liste des articles de l'commune</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+     
+       <div class="box box-warning">
+            <div class="box-header text-right">
+              <a href="{{ absolute_url(path('backend_commune_new'))}}" class="btn btn-social btn-primary"><i class="fa fa-plus"></i>Ajouter un article</a>
+            </div>
+
+      <div class="row">
+        {% for commune in communes %}
+           <div class="col-md-12 col-lg-3">
+            <div class="box box-default" style="height: 500px">
+              {% if commune.imageName %}
+                  <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(commune, 'imageFile') }}" alt="{{ commune.titre }}">
+              {% else %}
+                  <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/user-info.jpg')) }}" alt="{{ commune.titre }}">
+              {% endif %}
+                <div class="box-body">            	
+                    <h4 class="card-title">
+                    {% if commune.statut %}
+                        <span class="badge badge-success">{{ commune.rubrique.libelle }}</span>
+                    {% else %}
+                        <span class="badge badge-danger">{{ commune.rubrique.libelle }}</span>
+                    {% endif %}
+                    {{ commune.titre }}
+                    </h4>
+                    <p class="card-text text-justify">{{ commune.resume|raw }}</p>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a href="{{ absolute_url(path('backend_commune_edit', {'slug': commune.slug})) }}" >
+                            <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier</button>
+                        </a>
+                        <a href="{{ absolute_url(path('backend_commune_show', {'slug': commune.slug})) }}" >
+                            <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i> Consulter</button>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- /.box -->
+            </div> 
+        {% else %}
+            
+        {% endfor %}        
+      </div>
+
+    </section>
+{% endblock %}
