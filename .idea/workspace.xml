@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1aea104b-ac1c-4c14-aabc-88412b07a673" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/backend.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/backend.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symfony_requirements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/CommuneRubriqueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/CommuneRubriqueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/TypeEventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/TypeEventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Mairie.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Maire.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CommuneRubriqueRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CommuneRubriqueRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/MairieRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/MaireRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/TypeActualiteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TypeActualiteRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/TypeEventRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TypeEventRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/TypinfoRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TypinfoRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/backoffice/js/pages/editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/backoffice/js/pages/editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/config.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,19 +72,19 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="js" value="7" />
-          <entry key="php" value="636" />
-          <entry key="twig" value="389" />
+          <entry key="js" value="20" />
+          <entry key="php" value="836" />
+          <entry key="twig" value="807" />
           <entry key="txt" value="22" />
           <entry key="yml" value="34" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="7" />
-          <entry key="PHP" value="636" />
+          <entry key="JavaScript" value="20" />
+          <entry key="PHP" value="836" />
           <entry key="PLAIN_TEXT" value="30" />
-          <entry key="Twig" value="389" />
+          <entry key="Twig" value="807" />
           <entry key="YAML" value="34" />
         </counts>
       </usages-collector>
@@ -108,20 +92,20 @@
         <counts>
           <entry key="actualite" value="1" />
           <entry key="commune_rubrique" value="1" />
-          <entry key="js" value="2" />
-          <entry key="php" value="21" />
+          <entry key="js" value="3" />
+          <entry key="php" value="28" />
           <entry key="sql" value="1" />
-          <entry key="twig" value="13" />
+          <entry key="twig" value="22" />
           <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Database Element" value="2" />
-          <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="21" />
+          <entry key="JavaScript" value="3" />
+          <entry key="PHP" value="28" />
           <entry key="Scratch" value="1" />
-          <entry key="Twig" value="13" />
+          <entry key="Twig" value="22" />
           <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
@@ -129,56 +113,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/backend.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="173" column="53" selection-start-line="173" selection-start-column="53" selection-end-line="173" selection-end-column="53" />
-              <folding>
-                <element signature="e#7229#7248#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/backoffice/js/pages/editor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/maire/new.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="50" column="71" selection-end-line="101" />
-              <folding>
-                <element signature="e#12#29#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/maire/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1446">
-              <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-              <folding>
-                <element signature="e#12#29#0#Twig" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MaireController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="95" column="61" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
+            <state relative-caret-position="2111">
+              <caret line="171" column="69" selection-start-line="171" selection-start-column="69" selection-end-line="171" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -190,15 +129,17 @@
       <find>Mairie</find>
       <find>backend_actualite</find>
       <find>actualite</find>
-      <find>(form</find>
       <find>Enregistrement</find>
+      <find>maire</find>
+      <find>(form</find>
     </findStrings>
     <replaceStrings>
       <replace>Maire</replace>
       <replace>backend_maire</replace>
       <replace>maire</replace>
-      <replace>(edit_form</replace>
       <replace>Modifier</replace>
+      <replace>municipalite</replace>
+      <replace>(edit_form</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -222,13 +163,20 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Maire.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/MaireType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/backend.html.twig" />
-        <option value="$PROJECT_DIR$/web/backoffice/js/pages/editor.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/maire/new.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/maire/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/maire/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/maire/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/MaireController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Municipalite.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/MunicipaliteType.php" />
+        <option value="$PROJECT_DIR$/web/backoffice/js/pages/editor.js" />
+        <option value="$PROJECT_DIR$/app/Resources/views/municipalite/new.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/municipalite/show.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/municipalite/edit.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/municipalite/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/MunicipaliteController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/backend.html.twig" />
       </list>
     </option>
   </component>
@@ -410,12 +358,12 @@
       <workItem from="1536388660631" duration="732000" />
       <workItem from="1536389458423" duration="788000" />
       <workItem from="1536390307687" duration="2455000" />
-      <workItem from="1536573471649" duration="12749000" />
+      <workItem from="1536573471649" duration="17222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21549000" />
+    <option name="totallyTimeSpent" value="26022000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -432,7 +380,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32968536" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.32968536" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="10" weight="0.32884097" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32968536" />
@@ -469,6 +417,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -568,34 +542,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Actualite.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="32" column="19" selection-start-line="25" selection-start-column="16" selection-end-line="168" selection-end-column="5" />
-          <folding>
-            <element signature="e#36#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2770">
           <caret line="155" column="72" selection-start-line="155" selection-start-column="72" selection-end-line="155" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ActualiteType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="45" column="51" selection-start-line="45" selection-start-column="51" selection-end-line="49" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ActualiteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="48" column="53" lean-forward="true" selection-start-line="48" selection-start-column="53" selection-end-line="50" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -619,57 +569,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Maire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-          <folding>
-            <element signature="e#36#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/actualite/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="10" column="78" selection-start-line="10" selection-start-column="78" selection-end-line="10" selection-end-column="78" />
-          <folding>
-            <element signature="e#12#29#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/backend.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="173" column="53" selection-start-line="173" selection-start-column="53" selection-end-line="173" selection-end-column="53" />
-          <folding>
-            <element signature="e#7229#7248#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/backoffice/js/pages/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/maire/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
-          <folding>
-            <element signature="e#12#29#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/maire/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="38" column="139" selection-start-line="38" selection-start-column="139" selection-end-line="38" selection-end-column="139" />
           <folding>
             <element signature="e#12#29#0#Twig" expanded="true" />
           </folding>
@@ -686,6 +589,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MaireController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="95" column="61" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/maire/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+          <folding>
+            <element signature="e#12#29#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Maire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-274">
+          <caret line="13" column="70" lean-forward="true" selection-start-line="13" selection-start-column="70" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <element signature="e#36#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Actualite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="32" column="19" selection-start-line="25" selection-start-column="16" selection-end-line="168" selection-end-column="5" />
+          <folding>
+            <element signature="e#36#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Municipalite.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3178">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#36#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ActualiteType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="27" column="48" lean-forward="true" selection-start-line="27" selection-start-column="48" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/backoffice/js/pages/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/MunicipaliteType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/maire/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="38" column="139" selection-end-line="59" />
+          <folding>
+            <element signature="e#12#29#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/maire/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="34" column="53" selection-end-line="57" />
+          <folding>
+            <element signature="e#12#29#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/maire/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -696,20 +687,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/maire/edit.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ActualiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1446">
-          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+        <state relative-caret-position="205">
+          <caret line="48" column="53" selection-start-line="48" selection-start-column="53" selection-end-line="50" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/municipalite/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="38" column="150" selection-start-line="38" selection-start-column="150" selection-end-line="38" selection-end-column="150" />
           <folding>
             <element signature="e#12#29#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MaireController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/municipalite/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="95" column="61" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="61" />
+        <state relative-caret-position="70">
+          <caret line="2" column="84" selection-end-line="101" />
+          <folding>
+            <element signature="e#12#29#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/municipalite/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
+          <folding>
+            <element signature="e#12#29#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/municipalite/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="47" column="64" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
+          <folding>
+            <element signature="e#12#29#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MunicipaliteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="95" column="111" selection-start-line="95" selection-start-column="111" selection-end-line="95" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/backend.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2111">
+          <caret line="171" column="69" selection-start-line="171" selection-start-column="69" selection-end-line="171" selection-end-column="69" />
         </state>
       </provider>
     </entry>
