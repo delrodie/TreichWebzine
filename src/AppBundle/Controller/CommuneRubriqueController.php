@@ -24,7 +24,7 @@ class CommuneRubriqueController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $communeRubriques = $em->getRepository('AppBundle:CommuneRubrique')->findAll();
+        $communeRubriques = $em->getRepository('AppBundle:CommuneRubrique')->findRubriqueASC();
 
         $communeRubrique = new Communerubrique();
         $form = $this->createForm('AppBundle\Form\CommuneRubriqueType', $communeRubrique);

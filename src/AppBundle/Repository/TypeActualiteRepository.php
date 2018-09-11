@@ -16,6 +16,7 @@ class TypeActualiteRepository extends \Doctrine\ORM\EntityRepository
     public function findTypeActualiteDESC()
     {
         return $this->createQueryBuilder('t')
+                    ->where('t.statut = 1')
                     ->orderBy('t.libelle', 'ASC')
         ;
     }

@@ -16,7 +16,16 @@ class TypeEventRepository extends \Doctrine\ORM\EntityRepository
     public function findTypeEventDESC()
     {
         return $this->createQueryBuilder('t')
+                    ->where('t.statut = 1')
                     ->orderBy('t.libelle', 'DESC')
         ;
+    }
+
+    public function findTypeEventASC()
+    {
+        return $this->createQueryBuilder('t')
+                    ->orderBy('t.libelle', 'ASC')
+                    ->getQuery()->getResult()
+            ;
     }
 }

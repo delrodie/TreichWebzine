@@ -16,6 +16,7 @@ class TypinfoRepository extends \Doctrine\ORM\EntityRepository
     public function findTypinfoDESC()
     {
         return $this->createQueryBuilder('t')
+                    ->where('t.statut = 1')
                     ->orderBy('t.libelle', 'ASC')
         ;
     }

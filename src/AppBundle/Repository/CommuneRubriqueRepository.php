@@ -16,7 +16,19 @@ class CommuneRubriqueRepository extends \Doctrine\ORM\EntityRepository
     public function findRubriqueDESC()
     {
         return $this->createQueryBuilder('r')
-                    ->orderBy('r.id', 'DESC')
+                    ->where('r.statut = 1')
+                    ->orderBy('r.id', 'ASC')
         ;
+    }
+
+    /**
+     * Liste Croissante des rubrique
+     */
+    public function findRubriqueASC()
+    {
+        return $this->createQueryBuilder('r')
+                    ->orderBy('r.libelle', 'ASC')
+                    ->getQuery()->getResult()
+            ;
     }
 }

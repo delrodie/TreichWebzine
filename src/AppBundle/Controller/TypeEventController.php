@@ -24,7 +24,7 @@ class TypeEventController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $typeEvents = $em->getRepository('AppBundle:TypeEvent')->findAll();
+        $typeEvents = $em->getRepository('AppBundle:TypeEvent')->findTypeEventASC();
         
         $typeEvent = new Typeevent();
         $form = $this->createForm('AppBundle\Form\TypeEventType', $typeEvent);
