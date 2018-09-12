@@ -1,0 +1,65 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent () }} {{ conseiller.identite }}{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h1>{{ conseiller.identite }}</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_conseiller_index'))}}">conseiller</a></li>
+            <li class="breadcrumb-item active">{{ conseiller.identite }}</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="box box-warning">
+            <div class="box-header text-right">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="{{ absolute_url(path('backend_conseiller_edit', {'slug': conseiller.slug})) }}" >
+                        <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier</button>
+                    </a>
+                    <a href="{{ absolute_url(path('backend_conseiller_index')) }}" >
+                        <button type="button" class="btn btn-default"><i class="fa fa-list"></i> Liste des conseillers</button>
+                    </a>
+
+                    {{ form_start(delete_form, {'attr': {'onsubmit': 'return confirm("Êtes-vous sur de vouloir supprimer la biographie ?");'}}) }}
+                    <button type="submit" value="Supprimer" class="btn btn-danger">
+                        <i class="fa fa-trash"></i> Supprimer
+                    </button>
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="box box-default">
+                        {% if conseiller.imageName %}
+                            <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(conseiller, 'imageFile') }}" alt="{{ conseiller.identite }}">
+                        {% else %}
+                            <img src="{{ absolute_url(asset('backoffice/images/avatar.png'))}}" class="card-img-top img-responsive" alt="{{ conseiller.identite }}">
+                        {% endif %}
+                        <div class="box-body">
+                            <h4 class="card-title">
+                                {% if conseiller.statut %}
+                                    <span class="badge badge-success">Actif</span>
+                                    <span class="badge badge-primary">{{ conseiller.titre }}</span>
+                                {% else %}
+                                    <span class="badge badge-danger">Désactivé</span> :
+                                    <span class="badge badge-primary">{{ conseiller.titre }}</span>
+                                {% endif %}
+                                {{ conseiller.identite }}
+                            </h4>
+                            <p class="card-text">{{ conseiller.biographie|raw }}</p>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+
+            </div>
+
+    </section>
+{% endblock %}
