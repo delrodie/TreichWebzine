@@ -20,4 +20,18 @@ class ActualiteRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult()
         ;
     }
+
+    /**
+     * Liste des actualités actives decroissantes
+     */
+    public function findFindActualiteDescActif($limit, $offset)
+    {
+        return $this->createQueryBuilder('a')
+                    ->where('a.statut = 1')
+                    ->orderBy('a.id', 'DESC')
+                    ->setFirstResult($offset)
+                    ->setMaxResults($limit)
+                    ->getQuery()->getResult()
+            ;
+    }
 }

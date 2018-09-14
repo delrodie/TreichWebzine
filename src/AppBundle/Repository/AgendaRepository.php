@@ -20,4 +20,16 @@ class AgendaRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult()
         ;
     }
+
+    /**
+     * Liste decroissante des agendas actifs
+     */
+    public function findAgendaDescActif()
+    {
+        return $this->createQueryBuilder('a')
+                    ->where('a.statut = 1')
+                    ->orderBy('a.id', 'DESC')
+                    ->getQuery()->getResult()
+            ;
+    }
 }

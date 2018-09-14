@@ -20,4 +20,18 @@ class InformationRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult()
         ;
     }
+
+    /**
+     * Liste decroissante des informations actives
+     */
+    public function findInfoDescActive($limit, $offset)
+    {
+        return $this->createQueryBuilder('i')
+                    ->where('i.statut = 1')
+                    ->orderBy('i.id', 'DESC')
+                    ->setFirstResult($offset)
+                    ->setMaxResults($limit)
+                    ->getQuery()->getResult()
+            ;
+    }
 }

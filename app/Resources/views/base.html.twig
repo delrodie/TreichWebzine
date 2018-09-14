@@ -1,13 +1,854 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <title>{% block title %}Treichville Webzine{% endblock %}</title>
+    <!--meta-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.2" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="Abidjan, Treichville, palais, culture, sport, amichia, francois, mairie, nzassa" />
+    <meta name="description" content="Treichville commune nzassa" />
+    <!--style-->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700' rel='stylesheet' type='text/css'>
+    {% block stylesheets %}
+        {% stylesheets
+            'frontend/style/reset.css'
+            'frontend/style/superfish.css'
+            'frontend/style/prettyPhoto.css'
+            'frontend/style/jquery.qtip.css'
+            'frontend/style/style.css'
+            'frontend/style/menu_styles.css'
+            'frontend/style/animations.css'
+            'frontend/style/responsive.css'
+            'frontend/style/odometer-theme-default.css'
+            'frontend/style_selector/style_selector.css'
+            filter='cssrewrite' output='frontend/ressources/css/style.css'
+        %}
+        <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
+        {% endstylesheets %}
+    {% endblock %}
+    <link rel="shortcut icon" href="{{ absolute_url('favicon.ico') }}">
+</head>
+
+<body class="image_1 overlay">
+<div class="site_container boxed">
+
+    <div class="header_top_bar_container style_4 border clearfix">
+        <div class="header_top_bar">
+            <form class="search">
+                <input type="text" name="s" placeholder="Recherche..." class="search_input hint">
+                <input type="submit" class="search_submit" value="">
+                <input type="hidden" name="page" value="Recherche">
+            </form>
+            <ul class="social_icons clearfix dark">
+                <li>
+                    <a target="_blank" href="#" class="social_icon facebook" title="facebook">                        &nbsp;
+                    </a>
+                </li>
+                <li>
+                    <a target="_blank" href="#" class="social_icon twitter" title="twitter">                        &nbsp;
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social_icon mail" title="mail">                        &nbsp;
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="social_icon envato" title="envato">                        &nbsp;
+                    </a>
+                </li>
+
+            </ul>
+            <div class="latest_news_scrolling_list_container">
+                <ul>
+                    <li class="category">INFOS</li>
+                    <li class="left"><a href="#"></a></li>
+                    <li class="right"><a href="#"></a></li>
+                    <li class="posts">
+                        <ul class="latest_news_scrolling_list">
+                            <li>
+                                <a href="#" title="">Climate Change Debate While Britain Floods</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">The Public Health Crisis Hiding in Our Food</a>
+                            </li>
+                            <li>
+                                <a href="#" title="">Nuclear Fusion Closer to Becoming a Reality</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="date">
+                        <abbr title="04 Apr 2014" class="timeago current">04 Apr 2014</abbr>
+                        <abbr title="04 May 2014" class="timeago">04 May 2014</abbr>
+                        <abbr title="04 June 2014" class="timeago">04 June 2014</abbr>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header_container style_4 small">
+        <div class="header clearfix">
+            <div class="logo column column_1_3">
+                <h1><a href="#" title="Pressroom">
+                        <img src="images/logo-tw.png" class="img-responsive">
+                    </a></h1>
+                <h4>Portail d'informations de la commune</h4>
+            </div>
+            <div class="column column_2_3">
+                <img src="images/header-01.png">
+            </div>
+        </div>
+    </div>
+    <div class="menu_container sticky clearfix">
+        <nav>
+            <ul class="sf-menu">
+                <li class="selected">
+                    <a href="#" title="Accueil">
+                        Accueil
+                    </a>
+                </li>
+                <li class="submenu mega_menu_parent">
+                    <a href="#" title="Mega Menu">
+                        Actualités
+                    </a>
+                    <ul>
+                        <li class="submenu">
+                            <a href="indexf6f2.html?page=blog" title="Latest Posts">
+                                Agenda
+                            </a>
+                            <ul class="mega_menu blog">
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
+                                        <img src='images/samples/330x242/image_08.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
+                                        <img src='images/samples/330x242/image_11.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
+                                        <img src='images/samples/330x242/image_06.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="indexf6f2.html?page=blog" title="Latest Posts">
+                                Dossier
+                            </a>
+                            <ul class="mega_menu blog">
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
+                                        <img src='images/samples/330x242/image_10.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
+                                        <img src='images/samples/330x242/image_12.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
+                                        <img src='images/samples/330x242/image_02.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="indexf6f2.html?page=blog" title="Most Read">
+                                Politiques
+                            </a>
+
+                            <ul class="mega_menu blog">
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
+                                        <img src='images/samples/330x242/image_09.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
+                                        <img src='images/samples/330x242/image_11.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
+                                        <img src='images/samples/330x242/image_06.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="indexf6f2.html?page=blog" title="Most Read">
+                                Société / Education
+                            </a>
+
+                            <ul class="mega_menu blog">
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
+                                        <img src='images/samples/330x242/image_10.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
+                                        <img src='images/samples/330x242/image_09.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
+                                        <img src='images/samples/330x242/image_03.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="indexf6f2.html?page=blog" title="Most Read">
+                                Culture / Environnement
+                            </a>
+
+                            <ul class="mega_menu blog">
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
+                                        <img src='images/samples/330x242/image_01.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
+                                        <img src='images/samples/330x242/image_03.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
+                                        <img src='images/samples/330x242/image_05.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="indexf6f2.html?page=blog" title="Most Read">
+                                Sport / Santé
+                            </a>
+
+                            <ul class="mega_menu blog">
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
+                                        <img src='images/samples/330x242/image_02.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
+                                        <img src='images/samples/330x242/image_04.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
+                                        <img src='images/samples/330x242/image_06.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="indexf6f2.html?page=blog" title="Most Read">
+                                Réligion
+                            </a>
+
+                            <ul class="mega_menu blog">
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
+                                        <img src='images/samples/330x242/image_05.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
+                                        <img src='images/samples/330x242/image_07.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="post">
+                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
+                                        <img src='images/samples/330x242/image_09.jpg' alt='img'>
+                                    </a>
+                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
+                                    <ul class="post_details simple">
+                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
+                                        <li class="date">
+                                            10:11 PM, Feb 02
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="indexf6f2.html?page=blog" title="Blog">
+                        Treichville
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="#" title="Deputé">
+                                Député
+                            </a>
+                        </li>
+                        <li class="submenu">
+                            <a href="#" title="Commune">
+                                Commune
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#" title="Historique">
+                                        Historique
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Blog With Left Sidebar">
+                                        Communauté
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Blog With Left Sidebar">
+                                        Quartier
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="#" title="Blog 2 columns">
+                                Mairie
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="#" title="Le Maire">
+                                        Le Maire
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="La Municipalité">
+                                        La Municipalité
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Le Conseil Muicipal">
+                                        Le Conseil Muicipal
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="L'Etat Civil">
+                                        L'Etat Civil
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Les Services">
+                                        Les Services
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" title="Deputé">
+                                Député
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="#">
+                    <a href="#" title="Decouvertes">
+                        Decouvertes
+                    </a>
+                </li>
+                <li class="submenu">
+                    <a href="#" title="Media">
+                        Media
+                    </a>
+                    <ul class="expand_left_contact">
+                        <li>
+                            <a href="#" title="Radio Treichville">
+                                Radio Treichville
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Treich TV">
+                                Treich TV
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Treich Photos">
+                                Treich Photos
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="#" title="Annuaire">
+                        Annuaire
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="mobile_menu_container">
+            <a href="#" class="mobile-menu-switch">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </a>
+            <div class="mobile-menu-divider"></div>
+            <nav>
+                <ul class="mobile-menu">
+                    <li class="selected">
+                        <a href="#" title="Accueil">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="submenu">
+                        <a href="#" title="Actualités">
+                            Actualités
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" title="Agenda">
+                                    Agenda
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Dossier">
+                                    Dossier
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Politiques">
+                                    Politiques
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Cultures">
+                                    Cultures
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#" title="Treichville">
+                            Treichville
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" title=Tourisme">
+                                    Tourisme
+                                </a>
+                            </li>
+                            <li class="submenu">
+                                <a href="#" title="Commune">
+                                    Commune
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" title="Historique">
+                                            Historique
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Communauté">
+                                            Communauté
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Quartiers">
+                                            Quartiers
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="#" title="Mairie">
+                                    Mairie
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="#" title="Le Maire">
+                                            Le Maire
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="La Municipalité">
+                                            La Municipalité
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="Le Conseil Municiapl">
+                                            Le Conseil Municiapl
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="L'Etat Civil">
+                                            L'Etat Civil
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" title="Deputé">
+                                    Deputé
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="Decouvertes">
+                            Decouvertes
+                        </a>
+                    </li>
+                    <li class="submenu">
+                        <a href="#" title="Media">
+                            Media
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="#" title="Radio">
+                                    Radio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Treich TV">
+                                    Treich TV
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Treich Photos">
+                                    Treich Photos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" title="Annuaire">
+                            Annuaire
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- body -->
+    {% block body %}{% endblock %}
+
+    <div class="footer_container">
+        <div class="footer clearfix" style="">
+            <div class="row">
+                <div class="column column_1_3">
+                    <h4 class="box_header">Treich Webzine</h4>
+                    <p class="padding_top_bottom_25">Maecenas mauris elementum, est morbi interdum cursus at elite imperdiet libero. Proin odios dapibus integer an nulla augue pharetra cursus.</p>
+                    <div class="row">
+                        <div class="column column_1_2">
+                            <h5>Adresse </h5>
+                            <p>
+                                Avenue 21 Rue 38B<br>
+                                Treichville, Abidjan
+                            </p>
+                        </div>
+                        <div class="column column_1_2">
+                            <h5>Contact</h5>
+                            <p>
+                                Tel: +225 21 355 833<br>
+                                Cel: +225 72 027 427
+                            </p>
+                        </div>
+                    </div>
+                    <h4 class="box_header page_margin_top">Nous suivre sur les réseaux sociaux</h4>
+                    <ul class="social_icons dark page_margin_top clearfix">
+                        <li>
+                            <a target="_blank" title="" href="http://facebook.com/" class="social_icon facebook">
+                                &nbsp;
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" title="" href="https://twitter.com/" class="social_icon twitter">
+                                &nbsp;
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="#" class="social_icon mail">
+                                &nbsp;
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="#" class="social_icon instagram">
+                                &nbsp;
+                            </a>
+                        </li>
+                        <li>
+                            <a title="" href="#" class="social_icon pinterest">
+                                &nbsp;
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column_1_3">
+                    <h4 class="box_header">Archives actualités
+                    </h4>
+                    <div class="horizontal_carousel_container big page_margin_top">
+                        <div class="row">
+                            <div class="column column_1_2">
+                                <p>
+                                <div style="margin-bottom: 7px;"><a href="#">Agenda <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="#">Cultures <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="#">Dossiers <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="#">Educations <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="#">Environnements <span style="float: right;">0</span></a></div>
+                                </p>
+                            </div>
+                            <div class="column column_1_2">
+                                <p>
+                                <div style="margin-bottom: 7px;"><a href="#">Politiques <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="#">Réligions <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="#">Santés <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="#">Sociétés <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="#">Sports <span style="float: right;">0</span></a></div>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column_1_3">
+                    <h4 class="box_header">Nos Tweets</h4>
+                    <div class="vertical_carousel_container clearfix">
+                        <ul class="blog small vertical_carousel autoplay-1 scroll-1 navigation-1 easing-easeInOutQuint duration-750">
+                            <li class="post">
+                                <div class="text">
+                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Ed quia con sequuntur magni dolores.</p>
+                                </div>
+                                <div class="info-box">
+                                    <i class="fa fa-twitter"></i>
+                                    <strong><a href="#">@treichwebzine</a></strong>
+                                </div>
+                            </li>
+                            <li class="post">
+                                <div class="text">
+                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Ed quia con sequuntur magni dolores.</p>
+                                </div>
+                                <div class="info-box">
+                                    <i class="fa fa-twitter"></i>
+                                    <strong><a href="#">@treichwebzine</a></strong>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row page_margin_top_section">
+                <div class="column column_3_4">
+                    <ul class="footer_menu">
+                        <li>
+                            <h4><a href="#" title="Qui sommes-nous?">Qui sommes-nous?</a></h4>
+                        </li>
+                        <li>
+                            <h4><a href="#" title="Treichville">Treichville</a></h4>
+                        </li>
+                        <li>
+                            <h4><a href="#" title="Medias">Medias</a></h4>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column column_1_4">
+                    <a class="scroll_top" href="#top" title="Scroll to top">Top</a>
+                </div>
+            </div>
+            <div class="row copyright_row">
+                <div class="column column_1_3">
+                    2018 © Copyright <a href="#" title="Treich Webzine" target="_blank">Treich Webzine</a> | Tous droits réservés
+                </div>
+                <div class="column column_2_3">
+                    <ul class="footer_menu">
+                        <li>
+                            <h6><a href="#" title="Politique de confidentialité">Politique de confidentialité</a></h6>
+                        </li>
+                        <li>
+                            <h6><a href="#" title="Conditions d'utilisation">Conditions d'utilisation</a></h6>
+                        </li>
+                        <li>
+                            <h6><a href="#" title="Contactez-nous">Contactez-nous</a></h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="background_overlay"></div>
+<!--js-->
+{% block javascripts %}
+    {% javascripts
+        'frontend/js/jquery-1.12.4.min.js'
+        'frontend/js/jquery-migrate-1.4.1.min.js'
+        'frontend/js/jquery.ba-bbq.min.js'
+        'frontend/js/jquery-ui-1.11.1.custom.min.js'
+        'frontend/js/jquery.easing.1.3.js'
+        'frontend/js/jquery.carouFredSel-6.2.1-packed.js'
+        'frontend/js/jquery.touchSwipe.min.js'
+        'frontend/js/jquery.transit.min.js'
+        'frontend/js/jquery.sliderControl.js'
+        'frontend/js/jquery.timeago.js'
+        'frontend/js/jquery.hint.js'
+        'frontend/js/jquery.prettyPhoto.js'
+        'frontend/js/jquery.qtip.min.js'
+        'frontend/js/jquery.blockUI.js'
+        'frontend/js/main.js'
+        'frontend/js/odometer.min.js'
+        'frontend/style_selector/style_selector.js'
+        output='frontend/ressouces/js/app.js'
+    %}
+        <script src="{{ absolute_url(asset_url)}}"></script>
+    {% endjavascripts %}
+{% endblock %}
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+</body>
+
 </html>
