@@ -1,0 +1,61 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent () }} Liste des sliders{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h1>Liste des sliders</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_slider_index'))}}">slider</a></li>
+            <li class="breadcrumb-item active">Liste des sliders</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="box box-warning">
+            <div class="box-header text-right">
+                <a href="{{ absolute_url(path('backend_slider_new'))}}" class="btn btn-social btn-primary"><i class="fa fa-plus"></i>Ajouter un slider</a>
+            </div>
+
+            <div class="row">
+                {% for slider in sliders %}
+                    <div class="col-md-12 col-lg-3">
+                        <div class="box box-default" style="height: 550px">
+                            {% if slider.imageName %}
+                                <img class="card-img-top img-responsive" src="{{ asset('uploads/sliders/'~ slider.imageName) | imagine_filter('backend_information') }}" alt="{{ slider.titre }}" />
+                            {% else %}
+                                <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/user-info.jpg')) }}" alt="{{ slider.titre }}">
+                            {% endif %}
+                            <div class="box-body">
+                                <h4 class="card-title">
+                                    {% if slider.statut %}
+                                        <span class="badge badge-success">{{ slider.type.libelle }}</span>
+                                    {% else %}
+                                        <span class="badge badge-danger">{{ slider.type.libelle }}</span>
+                                    {% endif %}
+                                    {{ slider.titre }}
+                                </h4>
+                                <p class="card-text text-justify">{{ slider.contenu|raw }}</p>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="{{ absolute_url(path('backend_slider_edit', {'slug': slider.slug})) }}" >
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier</button>
+                                    </a>
+                                    <a href="{{ absolute_url(path('backend_slider_show', {'slug': slider.slug})) }}" >
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i> Consulter</button>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                {% else %}
+
+                {% endfor %}
+            </div>
+
+    </section>
+{% endblock %}
