@@ -1,0 +1,61 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent () }} Liste des dossiers{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h1>Liste des dossiers</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_dossier_index'))}}">Dossier</a></li>
+            <li class="breadcrumb-item active">Liste des dossiers</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="box box-warning">
+            <div class="box-header text-right">
+                <a href="{{ absolute_url(path('backend_dossier_new'))}}" class="btn btn-social btn-primary"><i class="fa fa-plus"></i>Ajouter une dossier</a>
+            </div>
+
+            <div class="row">
+                {% for dossier in dossiers %}
+                    <div class="col-md-12 col-lg-3">
+                        <div class="box box-default" style="height: 550px">
+                            {% if dossier.imageName %}
+                                <img class="card-img-top img-responsive" src="{{ asset('uploads/dossiers/'~ dossier.imageName) | imagine_filter('backend_information') }}" alt="{{ dossier.titre }}" />
+                            {% else %}
+                                <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/user-info.jpg')) }}" alt="{{ dossier.titre }}">
+                            {% endif %}
+                            <div class="box-body">
+                                <h4 class="card-title">
+                                    {% if dossier.statut %}
+                                        <span class="badge badge-success">{{ dossier.type.libelle }}</span>
+                                    {% else %}
+                                        <span class="badge badge-danger">{{ dossier.type.libelle }}</span>
+                                    {% endif %}
+                                    {{ dossier.titre }}
+                                </h4>
+                                <p class="card-text text-justify">{{ dossier.resume|raw }}</p>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="{{ absolute_url(path('backend_dossier_edit', {'slug': dossier.slug})) }}" >
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier</button>
+                                    </a>
+                                    <a href="{{ absolute_url(path('backend_dossier_show', {'slug': dossier.slug})) }}" >
+                                        <button type="button" class="btn btn-primary"><i class="fa fa-eye"></i> Consulter</button>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                {% else %}
+
+                {% endfor %}
+            </div>
+
+    </section>
+{% endblock %}

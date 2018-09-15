@@ -20,4 +20,15 @@ class TypeDossierRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult()
             ;
     }
+
+    /**
+     * Liste croissante des rubriques de dossiers actives
+     */
+    public function findTypeActifASC()
+    {
+        return $this->createQueryBuilder('d')
+                    ->where('d.statut = 1')
+                    ->orderBy('d.libelle', 'ASC')
+            ;
+    }
 }

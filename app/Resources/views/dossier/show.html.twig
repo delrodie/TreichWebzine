@@ -1,0 +1,65 @@
+{% extends 'backend.html.twig' %}
+
+{% block title %}{{ parent () }} {{ dossier.titre }}{% endblock %}
+
+{% block body %}
+    <section class="content-header">
+        <h1>{{ dossier.titre }}</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend'))}}"><i class="fa fa-home"></i> Accueil</a></li>
+            <li class="breadcrumb-item"><a href="{{ absolute_url(path('backend_dossier_index'))}}">dossiers</a></li>
+            <li class="breadcrumb-item active">{{ dossier.titre }}</li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="box box-warning">
+            <div class="box-header text-right">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="{{ absolute_url(path('backend_dossier_edit', {'slug': dossier.slug})) }}" >
+                        <button type="button" class="btn btn-primary"><i class="fa fa-edit"></i> Modifier</button>
+                    </a>
+                    <a href="{{ absolute_url(path('backend_dossier_index')) }}" >
+                        <button type="button" class="btn btn-default"><i class="fa fa-list"></i> Liste des dossiers</button>
+                    </a>
+
+                    {{ form_start(delete_form, {'attr': {'onsubmit': 'return confirm("Êtes-vous sur de vouloir supprimer cet article ?");'}}) }}
+                    <button type="submit" value="Supprimer" class="btn btn-danger">
+                        <i class="fa fa-trash"></i> Supprimer
+                    </button>
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <div class="box box-default">
+                        {% if dossier.imageName %}
+                            <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(dossier, 'imageFile') }}" alt="{{ dossier.titre }}">
+                        {% else %}
+                            <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/user-info.jpg')) }}" alt="{{ dossier.titre }}">
+                        {% endif %}
+                        <div class="box-body">
+                            <h4 class="card-title">
+                                {% if dossier.statut %}
+                                    <span class="badge badge-primary">{{ dossier.type.libelle }}</span>
+                                    <span class="badge badge-success">Actif</span>
+                                {% else %}
+                                    <span class="badge badge-primary">{{ dossier.type.libelle }}</span>
+                                    <span class="badge badge-danger">Désactivé</span>
+                                {% endif %}
+                                {{ dossier.titre }}
+                            </h4>
+                            <p class="card-text">{{ dossier.contenu|raw }}</p>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+
+            </div>
+
+    </section>
+{% endblock %}

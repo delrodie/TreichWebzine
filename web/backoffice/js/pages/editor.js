@@ -14,6 +14,7 @@
     $('#appbundle_maire_contenu').wysihtml5();
     $('#appbundle_municipalite_contenu').wysihtml5();
     $('#appbundle_conseiller_biographie').wysihtml5();
+    $('#appbundle_dossier_contenu').wysihtml5();
     $('.contenu').wysihtml5();
 	
   });

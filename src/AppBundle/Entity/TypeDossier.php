@@ -37,6 +37,11 @@ class TypeDossier
     private $statut;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Dossier", mappedBy="type")
+     */
+    private $dossiers;
+
+    /**
      * @var string
      *
      * @Gedmo\Slug(fields={"libelle"})
@@ -253,5 +258,46 @@ class TypeDossier
     public function getModifieLe()
     {
         return $this->modifieLe;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->dossiers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add dossier
+     *
+     * @param \AppBundle\Entity\Dossier $dossier
+     *
+     * @return TypeDossier
+     */
+    public function addDossier(\AppBundle\Entity\Dossier $dossier)
+    {
+        $this->dossiers[] = $dossier;
+
+        return $this;
+    }
+
+    /**
+     * Remove dossier
+     *
+     * @param \AppBundle\Entity\Dossier $dossier
+     */
+    public function removeDossier(\AppBundle\Entity\Dossier $dossier)
+    {
+        $this->dossiers->removeElement($dossier);
+    }
+
+    /**
+     * Get dossiers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDossiers()
+    {
+        return $this->dossiers;
     }
 }
