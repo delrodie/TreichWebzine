@@ -3,7 +3,7 @@
     <ul class="blog small vertical_carousel autoplay-1 scroll-1 navigation-1 easing-easeInOutQuint duration-750">
         {% for info in infos %}
             <li class="post">
-                <a href="#" title="{{ info.titre }}">
+                <a href="{{ absolute_url(path('frontend_information_show', {'type': info.typinfo.slug, 'slug': info.slug})) }}" title="{{ info.titre }}">
                     <span class="icon small gallery"></span>
                     {% if info.imageName %}
                         <img class="img-responsive" src="{{ asset('uploads/information/'~ info.imageName) | imagine_filter('accueil_treich_info') }}" alt="{{ info.titre }}" />
@@ -13,10 +13,10 @@
                 </a>
                 <div class="post_content">
                     <h5>
-                        <a href="#" title="{{ info.titre }}">{{ info.titre }}</a>
+                        <a href="{{ absolute_url(path('frontend_information_show', {'type': info.typinfo.slug, 'slug': info.slug})) }}" title="{{ info.titre }}">{{ info.titre }}</a>
                     </h5>
                     <ul class="post_details simple">
-                        <li class="category"><a href="#" title="{{ info.typinfo.libelle }}">{{ info.typinfo.libelle }}</a></li>
+                        <li class="category"><a href="{{ absolute_url(path('frontend_information_show', {'type': info.typinfo.slug, 'slug': info.slug})) }}" title="{{ info.typinfo.libelle }}">{{ info.typinfo.libelle }}</a></li>
                         <li class="date">{{ info.publieLe|date('d M Y') }}</li>
                     </ul>
                 </div>

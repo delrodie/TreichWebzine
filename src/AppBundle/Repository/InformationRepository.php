@@ -23,6 +23,24 @@ class InformationRepository extends \Doctrine\ORM\EntityRepository
     }
 
     /**
+     * Liste decroissante des informations similaires
+     */
+    public function findListSimilaire($type, $id, $limit = null, $offset = null)
+    {
+        return $this->listDesc($limit,$offset)
+                    ->leftJoin('i.typinfo', 't')
+                    ->where('t.id = :type')
+                    ->andWhere('i.statut = 1')
+                    ->andWhere('i.id <> :id')
+                    ->setParameters([
+                        'type' => $type,
+                        'id' => $id
+                    ])
+                    ->getQuery()->getResult()
+            ;
+    }
+
+    /**
      * Liste decroissante des informations actives
      */
     public function listDesc($limit = null, $offset = null)

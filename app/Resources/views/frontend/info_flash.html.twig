@@ -2,7 +2,7 @@
     <ul class="latest_news_scrolling_list">
         {% for info in infos %}
             <li>
-                <a href="#" title="{{ info.titre }}">{{ info.titre }}</a>
+                <a href="{{ absolute_url(path('frontend_information_show', {'type': info.typinfo.slug, 'slug': info.slug})) }}" title="{{ info.titre }}">{{ info.titre }}</a>
             </li>
         {% endfor %}
     </ul>

@@ -29,4 +29,20 @@ class FrontendInformationController extends Controller
             'infos' => $infos
         ]);
     }
+
+    /**
+     * @Route("/{type}/{slug}", name="frontend_information_show")
+     */
+    public function show($type, $slug)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $info = $em->getRepository('AppBundle:Information')->findOneBy(array('slug'=>$slug));
+        $similaires = $em->getRepository('AppBundle:Information')->findListSimilaire($info->getTypinfo()->getId(), $info->getId(), 4,0);
+
+        return $this->render("frontend/info_show.html.twig",[
+            'info' => $info,
+            'similaires' => $similaires,
+        ]);
+    }
 }
