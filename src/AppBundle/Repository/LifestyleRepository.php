@@ -20,4 +20,18 @@ class LifestyleRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult()
             ;
     }
+
+    /**
+     *
+     */
+    public function findLifestyleActifDesc($limit, $offset)
+    {
+        return $this->createQueryBuilder('l')
+                    ->where('l.statut = 1')
+                    ->orderBy('l.id', 'DESC')
+                    ->setFirstResult($offset)
+                    ->setMaxResults($limit)
+                    ->getQuery()->getResult()
+            ;
+    }
 }

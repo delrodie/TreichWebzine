@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %} Page d'accueil {% endblock %}
+{% block title %} TreichWebzine :: Magazine web de la commune de treichville {% endblock %}
 {% block body %}
     <div class="caroufredsel_wrapper caroufredsel_wrapper_slider">
         <ul class="slider">
@@ -160,98 +160,56 @@
                     </div>
 
                     <div class="row page_margin_top_section">
-                        <h4 class="box_header">Treich Lifestyle</h4>
+                        <h4 class="box_header">Treich Lifestyle &  Treich By Night</h4>
                         <div class="row">
                             <ul class="blog column column_1_2">
-                                <li class="post">
-                                    <a href="indexba02.html?page=post_gallery" title="High Altitudes May Aid Weight Control">
-                                        <span class="icon gallery"></span>
-                                        <img src='images/samples/330x242/image_05.jpg' alt='img'>
-                                    </a>
-                                    <h2 class="with_number">
-                                        <a href="indexba02.html?page=post_gallery" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a>
-                                        <a class="comments_number" href="indexba02.html?page=post_gallery#comments_list" title="2 comments">2<span class="arrow_comments"></span></a>
-                                    </h2>
-                                    <ul class="post_details">
-                                        <li class="category"><a href="index7855.html?page=category&amp;cat=world" title="WORLD">WORLD</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                    <p>Politicans have looked weak in the face of such natural disaster, with many facing criticism from local residents for doing little more than turning up as flood tourists at the side of disasters.</p>
-                                    <a class="read_more" href="indexba02.html?page=post_gallery" title="Read more"><span class="arrow"></span><span>READ MORE</span></a>
-                                </li>
+                                {% for lifestyleIntro in lifestyleIntros %}
+                                    <li class="post">
+                                        <a href="#" title="{{ lifestyleIntro.titre }}">
+                                            <span class="icon gallery"></span>
+                                            {% if lifestyleIntro.imageName %}
+                                                <img class="img-responsive" src="{{ asset('uploads/lifestyles/'~ lifestyleIntro.imageName) | imagine_filter('accueil_treich_event') }}" alt="{{ lifestyleIntro.titre }}" />
+                                            {% else %}
+                                                <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('accueil_treich_event') }}" alt="{{ lifestyleIntro.titre }}">
+                                            {% endif %}
+                                        </a>
+                                        <h2 class="with_number">
+                                            <a href="#" title="{{ lifestyleIntro.titre }}">{{ lifestyleIntro.titre }}</a>
+                                            <!--<a class="comments_number" href="#" title="2 comments">2<span class="arrow_comments"></span></a>-->
+                                        </h2>
+                                        <ul class="post_details">
+                                            <li class="category"><a href="#" title="{{ lifestyleIntro.type.libelle }}">{{ lifestyleIntro.type.libelle }}</a></li>
+                                            <li class="date">{{ lifestyleIntro.publieLe|date('d M Y') }}</li>
+                                        </ul>
+                                        <p>{{ lifestyleIntro.resume|raw }}</p>
+                                        <a class="read_more" href="#" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
+                                    </li>
+                                {% endfor %}
                             </ul>
                             <div class="column column_1_2">
                                 <ul class="blog small clearfix">
-                                    <li class="post">
-                                        <a href="indexb878.html?page=post" title="Study Linking Illnes and Salt Leaves Researchers Doubtful">
-                                            <img src='images/samples/100x100/image_02.jpg' alt='img'>
-                                        </a>
-                                        <div class="post_content">
-                                            <h5>
-                                                <a href="indexb878.html?page=post" title="Study Linking Illnes and Salt Leaves Researchers Doubtful">Study Linking Illnes and Salt Leaves Researchers Doubtful</a>
-                                            </h5>
-                                            <ul class="post_details simple">
-                                                <li class="category"><a href="indexdced.html?page=category&amp;cat=health" title="HEALTH">HEALTH</a></li>
-                                                <li class="date">
-                                                    10:11 PM, Feb 02
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="post">
-                                        <a href="indexb878.html?page=post" title="Seeking the Right Chemistry, Drug Makers Hunt for Mergers">
-                                            <img src='images/samples/100x100/image_13.jpg' alt='img'>
-                                        </a>
-                                        <div class="post_content">
-                                            <h5>
-                                                <a href="indexb878.html?page=post" title="Seeking the Right Chemistry, Drug Makers Hunt for Mergers">Seeking the Right Chemistry, Drug Makers Hunt for Mergers</a>
-                                            </h5>
-                                            <ul class="post_details simple">
-                                                <li class="category"><a href="indexdced.html?page=category&amp;cat=health" title="HEALTH">HEALTH</a></li>
-                                                <li class="date">
-                                                    10:11 PM, Feb 02
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="post">
-                                        <a href="indexda5d.html?page=post_review" title="Seeking the Right Chemistry, Drug Makers Hunt for Mergers">
-                                            <span class="icon small review"></span>
-                                            <img src='images/samples/100x100/image_01.jpg' alt='img'>
-                                        </a>
-                                        <div class="post_content">
-                                            <h5>
-                                                <a href="indexda5d.html?page=post_review" title="Seeking the Right Chemistry, Drug Makers Hunt for Mergers">The Public Health Crisis Hiding in Our Food</a>
-                                            </h5>
-                                            <ul class="post_details simple">
-                                                <li class="category"><a href="indexdced.html?page=category&amp;cat=health" title="HEALTH">HEALTH</a></li>
-                                                <li class="date">
-                                                    10:11 PM, Feb 02
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="post">
-                                        <a href="indexba02.html?page=post_gallery" title="New Painkiller Rekindles Addiction Concerns">
-                                            <span class="icon small gallery"></span>
-                                            <img src='images/samples/100x100/image_03.jpg' alt='img'>
-                                        </a>
-                                        <div class="post_content">
-                                            <h5>
-                                                <a href="indexba02.html?page=post_gallery" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a>
-                                            </h5>
-                                            <ul class="post_details simple">
-                                                <li class="category"><a href="indexdced.html?page=category&amp;cat=health" title="HEALTH">HEALTH</a></li>
-                                                <li class="date">
-                                                    10:11 PM, Feb 02
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                    {% for lifestyle in lifestyles %}
+                                        <li class="post">
+                                            <a href="#" title="{{ lifestyle.titre }}">
+                                                {% if lifestyle.imageName %}
+                                                    <img class="img-responsive" src="{{ asset('uploads/lifestyles/'~ lifestyle.imageName) | imagine_filter('accueil_treich_info') }}" alt="{{ lifestyle.titre }}" />
+                                                {% else %}
+                                                    <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('accueil_treich_info') }}" alt="{{ lifestyle.titre }}">
+                                                {% endif %}
+                                            </a>
+                                            <div class="post_content">
+                                                <h5>
+                                                    <a href="#" title="{{ lifestyle.titre }}">{{ lifestyle.titre }}</a>
+                                                </h5>
+                                                <ul class="post_details simple">
+                                                    <li class="category"><a href="#" title="{{ lifestyle.type.libelle|upper }}">{{ lifestyle.type.libelle|upper }}</a></li>
+                                                    <li class="date">{{ lifestyle.publieLe|date('d M Y') }}</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
                                 </ul>
-                                <a class="more page_margin_top" href="#">MORE FROM HEALTH</a>
+                                <a class="more page_margin_top" href="#">Voir les autres articles</a>
                             </div>
                         </div>
                     </div>
