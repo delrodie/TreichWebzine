@@ -3,84 +3,22 @@
 {% block body %}
     <div class="caroufredsel_wrapper caroufredsel_wrapper_slider">
         <ul class="slider">
-            <li class="slide">
-                <img src='images/slider/image_01.jpg' alt='img'>
-                <div class="slider_content_box">
-                    <ul class="post_details simple">
-                        <li class="category"><a href="indexdced.html?page=category&amp;cat=health" title="HEALTH">HEALTH</a></li>
-                        <li class="date">
-                            10:11 PM, Feb 02
-                        </li>
-                    </ul>
-                    <h2><a href="indexb878.html?page=post" title="Nuclear Fusion Closer to Becoming a Reality">Nuclear Fusion Closer to Becoming a Reality</a></h2>
-                    <p class="clearfix">Maecenas mauris elementum, est morbi interdum cursus at elite imperdiet libero. Proin odios dapibus integer an nulla augue pharetra cursus.</p>
-                </div>
-            </li>
-            <li class="slide">
-                <img src='images/slider/image_02.jpg' alt='img'>
-                <div class="slider_content_box">
-                    <ul class="post_details simple">
-                        <li class="category"><a href="index7855.html?page=category&amp;cat=world" title="WORLD">WORLD</a></li>
-                        <li class="date">
-                            18:25 PM, Feb 21
-                        </li>
-                    </ul>
-                    <h2><a href="indexb878.html?page=post" title="Climate Change Debate While Britain Floods">Climate Change Debate While Britain Floods</a></h2>
-                    <p class="clearfix">Maecenas mauris elementum, est morbi interdum cursus at elite imperdiet libero. Proin odios dapibus integer an nulla augue pharetra cursus.</p>
-                </div>
-            </li>
-            <li class="slide">
-                <img src='images/slider/image_03.jpg' alt='img'>
-                <div class="slider_content_box">
-                    <ul class="post_details simple">
-                        <li class="category"><a href="indexdced.html?page=category&amp;cat=health" title="HEALTH">HEALTH</a></li>
-                        <li class="date">
-                            10:11 PM, Feb 02
-                        </li>
-                    </ul>
-                    <h2><a href="indexb878.html?page=post" title="The Public Health Crisis Hiding in Our Food">The Public Health Crisis Hiding in Our Food</a></h2>
-                    <p class="clearfix">Maecenas mauris elementum, est morbi interdum cursus at elite imperdiet libero. Proin odios dapibus integer an nulla augue pharetra cursus.</p>
-                </div>
-            </li>
-            <li class="slide">
-                <img src='images/slider/image_01.jpg' alt='img'>
-                <div class="slider_content_box">
-                    <ul class="post_details simple">
-                        <li class="category"><a href="index7855.html?page=category&amp;cat=world" title="WORLD">WORLD</a></li>
-                        <li class="date">
-                            18:25 PM, Feb 21
-                        </li>
-                    </ul>
-                    <h2><a href="indexb878.html?page=post" title="Built on Brotherhood, Club Lives Up to Name">Built on Brotherhood, Club Lives Up to Name</a></h2>
-                    <p class="clearfix">Maecenas mauris elementum, est morbi interdum cursus at elite imperdiet libero. Proin odios dapibus integer an nulla augue pharetra cursus.</p>
-                </div>
-            </li>
-            <li class="slide">
-                <img src='images/slider/image_02.jpg' alt='img'>
-                <div class="slider_content_box">
-                    <ul class="post_details simple">
-                        <li class="category"><a href="indexdced.html?page=category&amp;cat=health" title="HEALTH">HEALTH</a></li>
-                        <li class="date">
-                            10:11 PM, Feb 02
-                        </li>
-                    </ul>
-                    <h2><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h2>
-                    <p class="clearfix">Maecenas mauris elementum, est morbi interdum cursus at elite imperdiet libero. Proin odios dapibus integer an nulla augue pharetra cursus.</p>
-                </div>
-            </li>
-            <li class="slide">
-                <img src='images/slider/image_03.jpg' alt='img'>
-                <div class="slider_content_box">
-                    <ul class="post_details simple">
-                        <li class="category"><a href="indexdced.html?page=category&amp;cat=health" title="HEALTH">HEALTH</a></li>
-                        <li class="date">
-                            10:11 PM, Feb 02
-                        </li>
-                    </ul>
-                    <h2><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h2>
-                    <p class="clearfix">Maecenas mauris elementum, est morbi interdum cursus at elite imperdiet libero. Proin odios dapibus integer an nulla augue pharetra cursus.</p>
-                </div>
-            </li>
+            {% for slider in sliders %}
+                <li class="slide">
+                    {% if slider.imageName %}
+                        <img class="img-responsive" src="{{ asset('uploads/sliders/'~ slider.imageName) | imagine_filter('sliders') }}" alt="{{ slider.titre }}" />
+                    {% else %}
+                        <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('sliders') }}" alt="{{ slider.titre }}">
+                    {% endif %}
+                    <div class="slider_content_box">
+                        <ul class="post_details simple">
+                            <li class="category"><a href="#" title="{{ slider.type.libelle|upper }}">{{ slider.type.libelle|upper }}</a></li>
+                        </ul>
+                        <h2><a href="#" title="{{ slider.titre }}">{{ slider.titre }}</a></h2>
+                        <p class="clearfix">{{ slider.contenu|raw }}</p>
+                    </div>
+                </li>
+            {% endfor %}
         </ul>
     </div>
     <div class="page">
