@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * TypeDossier
+ * TypeLifestyle
  *
- * @ORM\Table(name="type_dossier")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\TypeDossierRepository")
+ * @ORM\Table(name="type_lifestyle")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\TypeLifestyleRepository")
  */
-class TypeDossier
+class TypeLifestyle
 {
     /**
      * @var int
@@ -37,9 +37,9 @@ class TypeDossier
     private $statut;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Dossier", mappedBy="type")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Lifestyle", mappedBy="type")
      */
-    private $dossiers;
+    private $lifestyles;
 
     /**
      * @var string
@@ -91,13 +91,20 @@ class TypeDossier
     {
         return $this->id;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->lifestyles = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Set libelle
      *
      * @param string $libelle
      *
-     * @return TypeDossier
+     * @return TypeLifestyle
      */
     public function setLibelle($libelle)
     {
@@ -121,7 +128,7 @@ class TypeDossier
      *
      * @param boolean $statut
      *
-     * @return TypeDossier
+     * @return TypeLifestyle
      */
     public function setStatut($statut)
     {
@@ -145,7 +152,7 @@ class TypeDossier
      *
      * @param string $slug
      *
-     * @return TypeDossier
+     * @return TypeLifestyle
      */
     public function setSlug($slug)
     {
@@ -169,7 +176,7 @@ class TypeDossier
      *
      * @param string $publiePar
      *
-     * @return TypeDossier
+     * @return TypeLifestyle
      */
     public function setPubliePar($publiePar)
     {
@@ -193,7 +200,7 @@ class TypeDossier
      *
      * @param string $modifiePar
      *
-     * @return TypeDossier
+     * @return TypeLifestyle
      */
     public function setModifiePar($modifiePar)
     {
@@ -217,7 +224,7 @@ class TypeDossier
      *
      * @param \DateTime $publieLe
      *
-     * @return TypeDossier
+     * @return TypeLifestyle
      */
     public function setPublieLe($publieLe)
     {
@@ -241,7 +248,7 @@ class TypeDossier
      *
      * @param \DateTime $modifieLe
      *
-     * @return TypeDossier
+     * @return TypeLifestyle
      */
     public function setModifieLe($modifieLe)
     {
@@ -259,45 +266,38 @@ class TypeDossier
     {
         return $this->modifieLe;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->dossiers = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
-     * Add dossier
+     * Add lifestyle
      *
-     * @param \AppBundle\Entity\Dossier $dossier
+     * @param \AppBundle\Entity\Lifestyle $lifestyle
      *
-     * @return TypeDossier
+     * @return TypeLifestyle
      */
-    public function addDossier(\AppBundle\Entity\Dossier $dossier)
+    public function addLifestyle(\AppBundle\Entity\Lifestyle $lifestyle)
     {
-        $this->dossiers[] = $dossier;
+        $this->lifestyles[] = $lifestyle;
 
         return $this;
     }
 
     /**
-     * Remove dossier
+     * Remove lifestyle
      *
-     * @param \AppBundle\Entity\Dossier $dossier
+     * @param \AppBundle\Entity\Lifestyle $lifestyle
      */
-    public function removeDossier(\AppBundle\Entity\Dossier $dossier)
+    public function removeLifestyle(\AppBundle\Entity\Lifestyle $lifestyle)
     {
-        $this->dossiers->removeElement($dossier);
+        $this->lifestyles->removeElement($lifestyle);
     }
 
     /**
-     * Get dossiers
+     * Get lifestyles
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getDossiers()
+    public function getLifestyles()
     {
-        return $this->dossiers;
+        return $this->lifestyles;
     }
 }
