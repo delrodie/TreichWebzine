@@ -26,7 +26,7 @@ class ActualiteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $actualites = $em->getRepository('AppBundle:Actualite')->findActualiteDESC();
+        $actualites = $em->getRepository('AppBundle:Actualite')->findListDesc();
 
         return $this->render('actualite/index.html.twig', array(
             'actualites' => $actualites,

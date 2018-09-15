@@ -14,9 +14,9 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $agendas = $em->getRepository('AppBundle:Agenda')->findAgendaDescActif();
-        $actualites1 = $em->getRepository('AppBundle:Actualite')->findFindActualiteDescActif(2,0);
-        $actualites2 = $em->getRepository('AppBundle:Actualite')->findFindActualiteDescActif(2,2);
+        $agendas = $em->getRepository('AppBundle:Agenda')->findListDesc(1);
+        $actualites1 = $em->getRepository('AppBundle:Actualite')->findListDesc(1, 2,0);
+        $actualites2 = $em->getRepository('AppBundle:Actualite')->findListDesc(1,2,2);
         $lifestyleIntros = $em->getRepository('AppBundle:Lifestyle')->findLifestyleActifDesc(1,0);
         $lifestyles = $em->getRepository('AppBundle:Lifestyle')->findLifestyleActifDesc(4,1);
         $sliders = $em->getRepository('AppBundle:Slider')->findListDesc(1,6,0);
@@ -38,8 +38,8 @@ class DefaultController extends Controller
     public function blockdoitAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $infos = $em->getRepository('AppBundle:Information')->findInfoDescActive(4,0);
-        $dossiers = $em->getRepository('AppBundle:Dossier')->findAllActif(4,0);
+        $infos = $em->getRepository('AppBundle:Information')->findListDesc(1, 4,0);
+        $dossiers = $em->getRepository('AppBundle:Dossier')->findListDesc(1,4,0);
 
         return $this->render('default/block_droit.html.twig',[
             'infos' => $infos,

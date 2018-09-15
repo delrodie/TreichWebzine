@@ -68,24 +68,7 @@
                     <li class="category">INFOS</li>
                     <li class="left"><a href="#"></a></li>
                     <li class="right"><a href="#"></a></li>
-                    <li class="posts">
-                        <ul class="latest_news_scrolling_list">
-                            <li>
-                                <a href="#" title="">Climate Change Debate While Britain Floods</a>
-                            </li>
-                            <li>
-                                <a href="#" title="">The Public Health Crisis Hiding in Our Food</a>
-                            </li>
-                            <li>
-                                <a href="#" title="">Nuclear Fusion Closer to Becoming a Reality</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="date">
-                        <abbr title="04 Apr 2014" class="timeago current">04 Apr 2014</abbr>
-                        <abbr title="04 May 2014" class="timeago">04 May 2014</abbr>
-                        <abbr title="04 June 2014" class="timeago">04 June 2014</abbr>
-                    </li>
+                    {{ render(url('frontend_informations')) }}
                 </ul>
             </div>
         </div>
@@ -94,12 +77,12 @@
         <div class="header clearfix">
             <div class="logo column column_1_3">
                 <h1><a href="#" title="Pressroom">
-                        <img src="images/logo-tw.png" class="img-responsive">
+                        <img src="{{ absolute_url(asset('frontend/images/logo-tw.png')) }}" class="img-responsive" alt="Logo Treichville Webzine">
                     </a></h1>
                 <h4>Portail d'informations de la commune</h4>
             </div>
             <div class="column column_2_3">
-                <img src="images/header-01.png">
+                <img src="{{ absolute_url(asset('frontend/images/header-01.png')) }}" class="img-responsive">
             </div>
         </div>
     </div>
@@ -107,322 +90,15 @@
         <nav>
             <ul class="sf-menu">
                 <li class="selected">
-                    <a href="#" title="Accueil">
+                    <a href="{{ absolute_url(path('homepage')) }}" title="Accueil">
                         Accueil
                     </a>
                 </li>
                 <li class="submenu mega_menu_parent">
-                    <a href="#" title="Mega Menu">
+                    <a href="#" title="Les actualités">
                         Actualités
                     </a>
-                    <ul>
-                        <li class="submenu">
-                            <a href="indexf6f2.html?page=blog" title="Latest Posts">
-                                Agenda
-                            </a>
-                            <ul class="mega_menu blog">
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
-                                        <img src='images/samples/330x242/image_08.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
-                                        <img src='images/samples/330x242/image_11.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
-                                        <img src='images/samples/330x242/image_06.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="indexf6f2.html?page=blog" title="Latest Posts">
-                                Dossier
-                            </a>
-                            <ul class="mega_menu blog">
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
-                                        <img src='images/samples/330x242/image_10.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
-                                        <img src='images/samples/330x242/image_12.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
-                                        <img src='images/samples/330x242/image_02.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="indexf6f2.html?page=blog" title="Most Read">
-                                Politiques
-                            </a>
-
-                            <ul class="mega_menu blog">
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
-                                        <img src='images/samples/330x242/image_09.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
-                                        <img src='images/samples/330x242/image_11.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
-                                        <img src='images/samples/330x242/image_06.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="indexf6f2.html?page=blog" title="Most Read">
-                                Société / Education
-                            </a>
-
-                            <ul class="mega_menu blog">
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
-                                        <img src='images/samples/330x242/image_10.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
-                                        <img src='images/samples/330x242/image_09.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
-                                        <img src='images/samples/330x242/image_03.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="indexf6f2.html?page=blog" title="Most Read">
-                                Culture / Environnement
-                            </a>
-
-                            <ul class="mega_menu blog">
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
-                                        <img src='images/samples/330x242/image_01.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
-                                        <img src='images/samples/330x242/image_03.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
-                                        <img src='images/samples/330x242/image_05.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="indexf6f2.html?page=blog" title="Most Read">
-                                Sport / Santé
-                            </a>
-
-                            <ul class="mega_menu blog">
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
-                                        <img src='images/samples/330x242/image_02.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
-                                        <img src='images/samples/330x242/image_04.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
-                                        <img src='images/samples/330x242/image_06.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="indexf6f2.html?page=blog" title="Most Read">
-                                Réligion
-                            </a>
-
-                            <ul class="mega_menu blog">
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">
-                                        <img src='images/samples/330x242/image_05.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="New Painkiller Rekindles Addiction Concerns">New Painkiller Rekindles Addiction Concerns</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">
-                                        <img src='images/samples/330x242/image_07.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="High Altitudes May Aid Weight Control">High Altitudes May Aid Weight Control</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="post">
-                                    <a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">
-                                        <img src='images/samples/330x242/image_09.jpg' alt='img'>
-                                    </a>
-                                    <h5><a href="indexb878.html?page=post" title="Build on Brotherhood, Club Lives Up to Name">Build on Brotherhood, Club Lives Up to Name</a></h5>
-                                    <ul class="post_details simple">
-                                        <li class="category"><a title="HEALTH" href="indexdced.html?page=category&amp;cat=health">HEALTH</a></li>
-                                        <li class="date">
-                                            10:11 PM, Feb 02
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                    {{ render(url('frontend_menu')) }}
                 </li>
                 <li class="submenu">
                     <a href="indexf6f2.html?page=blog" title="Blog">

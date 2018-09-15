@@ -1,0 +1,14 @@
+<li class="posts">
+    <ul class="latest_news_scrolling_list">
+        {% for info in infos %}
+            <li>
+                <a href="#" title="{{ info.titre }}">{{ info.titre }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</li>
+<li class="date">
+    {% for info in infos %}
+        <abbr title="{{ info.publieLe|date('d M Y') }}" class="timeago current">{{ info.publieLe|date('d M Y') }}</abbr>
+    {% endfor %}
+</li>

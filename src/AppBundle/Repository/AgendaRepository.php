@@ -11,25 +11,26 @@ namespace AppBundle\Repository;
 class AgendaRepository extends \Doctrine\ORM\EntityRepository
 {
     /**
-     * Liste decroissante des agendas
+     * Liste des agendas
      */
-    public function findAgendaDESC()
+    public function findListDesc($statut = null, $limit = null, $offset = null)
     {
-        return $this->createQueryBuilder('a')
-                    ->orderBy('a.id', 'DESC')
-                    ->getQuery()->getResult()
-        ;
+        if ($statut){
+            return $this->listDesc($limit, $offset)->where('a.statut = 1')->getQuery()->getResult();
+        } else{
+            return $this->listDesc($limit, $offset)->getQuery()->getResult();
+        }
     }
 
     /**
-     * Liste decroissante des agendas actifs
+     * Liste decroissantes des agendas
      */
-    public function findAgendaDescActif()
+    public function listDesc($limit = null, $offset = null)
     {
         return $this->createQueryBuilder('a')
-                    ->where('a.statut = 1')
                     ->orderBy('a.id', 'DESC')
-                    ->getQuery()->getResult()
+                    ->setFirstResult($offset)
+                    ->setMaxResults($limit)
             ;
     }
 }

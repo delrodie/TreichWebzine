@@ -11,27 +11,54 @@ namespace AppBundle\Repository;
 class ActualiteRepository extends \Doctrine\ORM\EntityRepository
 {
     /**
-     * Liste decroissante des actualites
+     * Liste des actualités
      */
-    public function findActualiteDESC()
+    public function findListDesc($statut = null, $limit = null, $offset = null)
     {
-        return $this->createQueryBuilder('a')
-                    ->orderBy('a.id', 'DESC')
-                    ->getQuery()->getResult()
-        ;
+        if ($statut){
+            return $this->listDesc($limit, $offset)->where('a.statut = 1')->getQuery()->getResult();
+        } else{
+            return $this->listDesc($limit, $offset)->getQuery()->getResult();
+        }
     }
 
     /**
-     * Liste des actualités actives decroissantes
+     * Liste des actualités selon le type
      */
-    public function findFindActualiteDescActif($limit, $offset)
+    public function findTypeListDesc($type1, $type2 = null, $limit = null, $offset = null)
+    {
+        if ($type2){
+            return $this->listDesc($limit, $offset)
+                        ->leftJoin('a.type', 't')
+                        ->where('t.slug LIKE :type1')
+                        ->orWhere('t.slug LIKE :type2')
+                        ->andWhere('a.statut = 1')
+                        ->setParameters([
+                            'type1' => '%'.$type1.'%',
+                            'type2' => '%'.$type2.'%',
+                        ])
+                        ->getQuery()->getResult()
+                ;
+        } else{
+            return $this->listDesc($limit, $offset)
+                        ->leftJoin('a.type', 't')
+                        ->where('t.slug LIKE :type')
+                        ->andWhere('a.statut = 1')
+                        ->setParameter('type', '%'.$type1.'%')
+                        ->getQuery()->getResult()
+                ;
+        }
+    }
+
+    /**
+     * Liste decroissantes des actualités
+     */
+    public function listDesc ($limit=null, $offset=null)
     {
         return $this->createQueryBuilder('a')
-                    ->where('a.statut = 1')
                     ->orderBy('a.id', 'DESC')
                     ->setFirstResult($offset)
                     ->setMaxResults($limit)
-                    ->getQuery()->getResult()
             ;
     }
 }

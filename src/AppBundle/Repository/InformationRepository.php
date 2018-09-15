@@ -11,27 +11,27 @@ namespace AppBundle\Repository;
 class InformationRepository extends \Doctrine\ORM\EntityRepository
 {
     /**
-     * Liste decroissante des informations
+     * Liste decroissante des informations actives
      */
-    public function findInfoDESC()
+    public function findListDesc($statut = null, $limit = null, $offset = null)
     {
-        return $this->createQueryBuilder('i')
-                    ->orderBy('i.id', 'DESC')
-                    ->getQuery()->getResult()
-        ;
+        if ($statut){
+            return $this->listDesc($limit, $offset)->where('i.statut = 1')->getQuery()->getResult();
+        }else{
+            return $this->listDesc($limit, $offset)->getQuery()->getResult();
+        }
     }
 
     /**
      * Liste decroissante des informations actives
      */
-    public function findInfoDescActive($limit, $offset)
+    public function listDesc($limit = null, $offset = null)
     {
         return $this->createQueryBuilder('i')
-                    ->where('i.statut = 1')
                     ->orderBy('i.id', 'DESC')
                     ->setFirstResult($offset)
                     ->setMaxResults($limit)
-                    ->getQuery()->getResult()
             ;
     }
+
 }

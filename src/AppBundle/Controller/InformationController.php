@@ -26,7 +26,7 @@ class InformationController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $informations = $em->getRepository('AppBundle:Information')->findInfoDESC();
+        $informations = $em->getRepository('AppBundle:Information')->findListDesc();
 
         return $this->render('information/index.html.twig', array(
             'informations' => $informations,

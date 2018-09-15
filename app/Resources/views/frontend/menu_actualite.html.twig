@@ -1,0 +1,168 @@
+<ul>
+    <li class="submenu">
+        <a href="#" title="Les derniers agendas">
+            Agenda
+        </a>
+        <ul class="mega_menu blog">
+            {% for agenda in agendas %}
+                <li class="post">
+                    <a href="#" title="{{ agenda.titre }}">
+                        {% if agenda.imageName %}
+                            <img class="img-responsive" src="{{ asset('uploads/agenda/'~ agenda.imageName) | imagine_filter('menu') }}" alt="{{ agenda.titre }}" />
+                        {% else %}
+                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ agenda.titre }}">
+                        {% endif %}
+                    </a>
+                    <h5><a href="#" title="{{ agenda.titre }}">{{ agenda.titre }}</a></h5>
+                    <ul class="post_details simple">
+                        <li class="category"><a title="{{ agenda.typeevent.libelle|upper }}" href="#">{{ agenda.typeevent.libelle|upper }}</a></li>
+                        <li class="date timeago current" title="{{ agenda.publieLe|date('d M Y') }}">{{ agenda.publieLe|date('d M Y') }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="submenu">
+        <a href="#" title="Derniers articles de dossier">
+            Dossier
+        </a>
+        <ul class="mega_menu blog">
+            {% for dossier in dossiers %}
+                <li class="post">
+                    <a href="#" title="{{ dossier.titre }}">
+                        {% if dossier.imageName %}
+                            <img class="img-responsive" src="{{ asset('uploads/dossiers/'~ dossier.imageName) | imagine_filter('menu') }}" alt="{{ dossier.titre }}" />
+                        {% else %}
+                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ dossier.titre }}">
+                        {% endif %}
+                    </a>
+                    <h5><a href="#" title="{{ dossier.titre }}">{{ dossier.titre }}</a></h5>
+                    <ul class="post_details simple">
+                        <li class="category"><a title="{{ dossier.type.libelle|upper }}" href="#">{{ dossier.type.libelle|upper }}</a></li>
+                        <li class="date timeago current" title="{{ dossier.publieLe|date('d M Y') }}">{{ dossier.publieLe|date('d M Y') }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="submenu">
+        <a href="#" title="Most Read">
+            Politiques
+        </a>
+
+        <ul class="mega_menu blog">
+            {% for politique in politiques %}
+                <li class="post">
+                    <a href="#" title="{{ politique.titre }}">
+                        {% if politique.imageName %}
+                            <img class="img-responsive" src="{{ asset('uploads/actualite/'~ politique.imageName) | imagine_filter('menu') }}" alt="{{ politique.titre }}" />
+                        {% else %}
+                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ politique.titre }}">
+                        {% endif %}
+                    </a>
+                    <h5><a href="#" title="{{ politique.titre }}">{{ politique.titre }}</a></h5>
+                    <ul class="post_details simple">
+                        <li class="category"><a title="{{ politique.type.libelle|upper }}" href="#">{{ politique.type.libelle|upper }}</a></li>
+                        <li class="date" title="{{ politique.publieLe|date('d M Y') }}">{{ politique.publieLe|date('d M Y') }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="submenu">
+        <a href="#" title="Société et éducation">
+            Société / Education
+        </a>
+
+        <ul class="mega_menu blog">
+            {% for societe in societes %}
+                <li class="post">
+                    <a href="#" title="{{ societe.titre }}">
+                        {% if societe.imageName %}
+                            <img class="img-responsive" src="{{ asset('uploads/actualite/'~ societe.imageName) | imagine_filter('menu') }}" alt="{{ societe.titre }}" />
+                        {% else %}
+                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ societe.titre }}">
+                        {% endif %}
+                    </a>
+                    <h5><a href="#" title="{{ societe.titre }}">{{ societe.titre }}</a></h5>
+                    <ul class="post_details simple">
+                        <li class="category"><a title="{{ societe.type.libelle|upper }}" href="#">{{ societe.type.libelle|upper }}</a></li>
+                        <li class="date" title="{{ societe.publieLe|date('d M Y') }}">{{ societe.publieLe|date('d M Y') }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="submenu">
+        <a href="#" title="Voir tous es articles">
+            Culture / Environnement
+        </a>
+
+        <ul class="mega_menu blog">
+            {% for culture in cultures %}
+                <li class="post">
+                    <a href="#" title="{{ culture.titre }}">
+                        {% if culture.imageName %}
+                            <img class="img-responsive" src="{{ asset('uploads/actualite/'~ culture.imageName) | imagine_filter('menu') }}" alt="{{ culture.titre }}" />
+                        {% else %}
+                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ culture.titre }}">
+                        {% endif %}
+                    </a>
+                    <h5><a href="#" title="{{ culture.titre }}">{{ culture.titre }}</a></h5>
+                    <ul class="post_details simple">
+                        <li class="category"><a title="{{ culture.type.libelle|upper }}" href="#">{{ culture.type.libelle|upper }}</a></li>
+                        <li class="date" title="{{ culture.publieLe|date('d M Y') }}">{{ culture.publieLe|date('d M Y') }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="submenu">
+        <a href="#" title="Voir les autres articles">
+            Sport / Santé
+        </a>
+
+        <ul class="mega_menu blog">
+            {% for sport in sports %}
+                <li class="post">
+                    <a href="#" title="{{ sport.titre }}">
+                        {% if sport.imageName %}
+                            <img class="img-responsive" src="{{ asset('uploads/actualite/'~ sport.imageName) | imagine_filter('menu') }}" alt="{{ sport.titre }}" />
+                        {% else %}
+                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ sport.titre }}">
+                        {% endif %}
+                    </a>
+                    <h5><a href="#" title="{{ sport.titre }}">{{ sport.titre }}</a></h5>
+                    <ul class="post_details simple">
+                        <li class="category"><a title="{{ sport.type.libelle|upper }}" href="#">{{ sport.type.libelle|upper }}</a></li>
+                        <li class="date" title="{{ sport.publieLe|date('d M Y') }}">{{ sport.publieLe|date('d M Y') }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+    <li class="submenu">
+        <a href="#" title="Voir les autres articles">
+            Réligion
+        </a>
+
+        <ul class="mega_menu blog">
+            {% for religion in religions %}
+                <li class="post">
+                    <a href="#" title="{{ religion.titre }}">
+                        {% if religion.imageName %}
+                            <img class="img-responsive" src="{{ asset('uploads/actualite/'~ religion.imageName) | imagine_filter('menu') }}" alt="{{ religion.titre }}" />
+                        {% else %}
+                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ religion.titre }}">
+                        {% endif %}
+                    </a>
+                    <h5><a href="#" title="{{ religion.titre }}">{{ religion.titre }}</a></h5>
+                    <ul class="post_details simple">
+                        <li class="category"><a title="{{ religion.type.libelle|upper }}" href="#">{{ religion.type.libelle|upper }}</a></li>
+                        <li class="date" title="{{ religion.publieLe|date('d M Y') }}">{{ religion.publieLe|date('d M Y') }}</li>
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>

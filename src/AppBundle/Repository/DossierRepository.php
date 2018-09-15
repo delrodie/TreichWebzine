@@ -11,27 +11,26 @@ namespace AppBundle\Repository;
 class DossierRepository extends \Doctrine\ORM\EntityRepository
 {
     /**
-     * Liste decroissante des dossiers
+     * Liste des dossiers
      */
-    public function findAllDesc()
+    public function findListDesc($statut = null, $limit = null, $offset = null)
     {
-        return $this->createQueryBuilder('d')
-                    ->orderBy('d.id', 'DESC')
-                    ->getQuery()->getResult()
-            ;
+        if ($statut){
+            return $this->listDesc($limit, $offset)->where('d.statut = 1')->getQuery()->getResult();
+        } else{
+            return$this->listDesc($limit, $offset)->getQuery()->getResult();
+        }
     }
 
     /**
-     * Liste decroissante des dossiers actifs
+     * Liste decroissante des dossiers
      */
-    public function findAllActif($limit,$offset)
+    public function listDesc($limit = null, $offset = null)
     {
         return $this->createQueryBuilder('d')
-                    ->where('d.statut = 1')
                     ->orderBy('d.id', 'DESC')
                     ->setFirstResult($offset)
                     ->setMaxResults($limit)
-                    ->getQuery()->getResult()
             ;
     }
 }

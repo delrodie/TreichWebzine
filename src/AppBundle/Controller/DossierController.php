@@ -25,7 +25,7 @@ class DossierController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $dossiers = $em->getRepository('AppBundle:Dossier')->findAllDesc();
+        $dossiers = $em->getRepository('AppBundle:Dossier')->findListDesc();
 
         return $this->render('dossier/index.html.twig', array(
             'dossiers' => $dossiers,
