@@ -17,12 +17,27 @@ class DefaultController extends Controller
         $agendas = $em->getRepository('AppBundle:Agenda')->findAgendaDescActif();
         $actualites1 = $em->getRepository('AppBundle:Actualite')->findFindActualiteDescActif(2,0);
         $actualites2 = $em->getRepository('AppBundle:Actualite')->findFindActualiteDescActif(2,2);
-        $infos = $em->getRepository('AppBundle:Information')->findInfoDescActive(4,0);
         return $this->render('default/index.html.twig', [
             'agendas' => $agendas,
             'actualites1' => $actualites1,
             'actualites2' => $actualites2,
+        ]);
+    }
+
+    /**
+     * Block droit de l'interface
+     *
+     * @route("/block-droite", name="homepage_droit")
+     */
+    public function blockdoitAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $infos = $em->getRepository('AppBundle:Information')->findInfoDescActive(4,0);
+        $dossiers = $em->getRepository('AppBundle:Dossier')->findAllActif(4,0);
+
+        return $this->render('default/block_droit.html.twig',[
             'infos' => $infos,
+            'dossiers' => $dossiers,
         ]);
     }
 

@@ -20,4 +20,18 @@ class DossierRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult()
             ;
     }
+
+    /**
+     * Liste decroissante des dossiers actifs
+     */
+    public function findAllActif($limit,$offset)
+    {
+        return $this->createQueryBuilder('d')
+                    ->where('d.statut = 1')
+                    ->orderBy('d.id', 'DESC')
+                    ->setFirstResult($offset)
+                    ->setMaxResults($limit)
+                    ->getQuery()->getResult()
+            ;
+    }
 }
