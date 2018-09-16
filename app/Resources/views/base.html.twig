@@ -407,19 +407,19 @@
                             <div class="column column_1_2">
                                 <p>
                                 <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_agenda')) }}">Agenda <span style="float: right;">{{ render(url('frontend_agenda_compteur')) }}</span></a></div>
-                                <div style="margin-bottom: 7px;"><a href="#">Cultures <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': 'culture'})) }}">Cultures <span style="float: right;">{{ render(url('frontend_actualite_compteur', {'type': 'culture'})) }}</span></a></div>
                                 <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_dossier')) }}">Dossiers <span style="float: right;">{{ render(url('frontend_dossier_compteur')) }}</span></a></div>
-                                <div style="margin-bottom: 7px;"><a href="#">Educations <span style="float: right;">0</span></a></div>
-                                <div style="margin-bottom: 7px;"><a href="#">Environnements <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': 'education'})) }}">Educations <span style="float: right;">{{ render(url('frontend_actualite_compteur', {'type': 'education'})) }}</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': 'environnement'})) }}">Environnements <span style="float: right;">{{ render(url('frontend_actualite_compteur', {'type': 'environnement'})) }}</span></a></div>
                                 </p>
                             </div>
                             <div class="column column_1_2">
                                 <p>
-                                <div style="margin-bottom: 7px;"><a href="#">Politiques <span style="float: right;">0</span></a></div>
-                                <div style="margin-bottom: 7px;"><a href="#">Réligions <span style="float: right;">0</span></a></div>
-                                <div style="margin-bottom: 7px;"><a href="#">Santés <span style="float: right;">0</span></a></div>
-                                <div style="margin-bottom: 7px;"><a href="#">Sociétés <span style="float: right;">0</span></a></div>
-                                <div style="margin-bottom: 7px;"><a href="#">Sports <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': 'politique'})) }}">Politiques <span style="float: right;">{{ render(url('frontend_actualite_compteur', {'type': 'politique'})) }}</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': 'religion'})) }}">Réligions <span style="float: right;">{{ render(url('frontend_actualite_compteur', {'type': 'religion'})) }}</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': 'sante'})) }}">Santés <span style="float: right;">{{ render(url('frontend_actualite_compteur', {'type': 'sante'})) }}</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': 'societe'})) }}">Sociétés <span style="float: right;">{{ render(url('frontend_actualite_compteur', {'type': 'societe'})) }}</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': 'sport'})) }}">Sports <span style="float: right;">{{ render(url('frontend_actualite_compteur', {'type': 'sport'})) }}</span></a></div>
                                 </p>
                             </div>
                         </div>

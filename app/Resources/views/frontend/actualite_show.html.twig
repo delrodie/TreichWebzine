@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}{{ dossier.titre }}{% endblock %}
+{% block title %}{{ actualite.titre }}{% endblock %}
 {% block body %}
     <div class="page">
         <div class="page_layout page_margin_top clearfix">
@@ -13,25 +13,25 @@
                 <div class="column column_2_3">
                     <div class="row">
                         <div class="post single">
-                            <h1 class="post_title">{{ dossier.titre }}</h1>
+                            <h1 class="post_title">{{ actualite.titre }}</h1>
                             <ul class="post_details clearfix">
-                                <li class="detail category"> <a href="#" title="{{ dossier.type.libelle|upper }}">{{ dossier.type.libelle|upper }}</a></li>
-                                <li class="detail date">{{ dossier.publieLe|date('d-m-Y h:i:s') }}</li>
-                                <li class="detail author">Par <a href="#" title="{{ dossier.publiePar|title }}">{{ dossier.publiePar|title }}</a></li>
+                                <li class="detail category"> <a href="{{ absolute_url(path('frontend_actualite_type', {'type': actualite.type.slug})) }}" title="{{ actualite.type.libelle|upper }}">{{ actualite.type.libelle|upper }}</a></li>
+                                <li class="detail date">{{ actualite.publieLe|date('d-m-Y h:i:s') }}</li>
+                                <li class="detail author">Par <a href="#" title="{{ actualite.publiePar|title }}">{{ actualite.publiePar|title }}</a></li>
                                 <!--<li class="detail views">6 254 Views</li>
                                 <li class="detail comments"><a href="#comments_list" class="scroll_to_comments" title="6 Comments">6 Comments</a></li>-->
                             </ul>
-                            {% if dossier.imageName %}
-                                <a href="{{ asset('uploads/dossiers/'~ dossier.imageName) | imagine_filter('page_zoom') }}" class="post_image page_margin_top prettyPhoto" title="{{ dossier.titre }}">
-                                    <img class="img-responsive" src="{{ asset('uploads/dossiers/'~ dossier.imageName) | imagine_filter('page') }}" alt="{{ dossier.titre }}" />
+                            {% if actualite.imageName %}
+                                <a href="{{ asset('uploads/actualites/'~ actualite.imageName) | imagine_filter('page_zoom') }}" class="post_image page_margin_top prettyPhoto" title="{{ actualite.titre }}">
+                                    <img class="img-responsive" src="{{ asset('uploads/actualite/'~ actualite.imageName) | imagine_filter('page') }}" alt="{{ actualite.titre }}" />
                                 </a>
                             {% else %}
-                                <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('page') }}" alt="{{ dossier.titre }}">
+                                <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('page') }}" alt="{{ actualite.titre }}">
                             {% endif %}
                             <div class="post_content page_margin_top_section clearfix">
                                 <div class="">
                                     <div class="text">
-                                        {{ dossier.contenu|raw }}
+                                        {{ actualite.contenu|raw }}
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
 
                     <div class="row page_margin_top">
                         <ul class="taxonomies tags clearfix">
-                            {% for tag in dossier.tags|split(',') %}
+                            {% for tag in actualite.tags|split(',') %}
                                 <li><a href="#" title="{{ tag|title }}">{{ tag|upper }}</a></li>
                             {% endfor %}
                         </ul>
@@ -72,17 +72,17 @@
                             <ul class="blog horizontal_carousel autoplay-1 scroll-1 navigation-1 easing-easeInOutQuint duration-750">
                                 {% for similaire in similaires %}
                                     <li class="post">
-                                        <a href="{{ absolute_url(path('frontend_dossier_show', {'type': similaire.type.slug, 'slug': similaire.slug})) }}" title="{{ similaire.titre }}">
+                                        <a href="{{ absolute_url(path('frontend_actualite_show', {'type': similaire.type.slug, 'slug': similaire.slug})) }}" title="{{ similaire.titre }}">
                                             {% if similaire.imageName %}
-                                                <img class="img-responsive" src="{{ asset('uploads/dossiers/'~ similaire.imageName) | imagine_filter('accueil_treich_event') }}" alt="{{ similaire.titre }}" />
+                                                <img class="img-responsive" src="{{ asset('uploads/actualite/'~ similaire.imageName) | imagine_filter('accueil_treich_event') }}" alt="{{ similaire.titre }}" />
                                             {% else %}
                                                 <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('accueil_treich_event') }}" alt="{{ similaire.titre }}">
                                             {% endif %}
                                         </a>
-                                        <h5><a href="{{ absolute_url(path('frontend_dossier_show', {'type': similaire.type.slug, 'slug': similaire.slug})) }}" title="{{ similaire.titre }}">{{ similaire.titre }}</a></h5>
+                                        <h5><a href="{{ absolute_url(path('frontend_actualite_show', {'type': similaire.type.slug, 'slug': similaire.slug})) }}" title="{{ similaire.titre }}">{{ similaire.titre }}</a></h5>
                                         <ul class="post_details simple">
-                                            <li class="category"><a href="#" title="{{ similaire.type.libelle|upper }}">{{ similaire.type.libelle|upper }}</a></li>
-                                            <li class="date">{{ dossier.publieLe|date('d M Y') }}</li>
+                                            <li class="category"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': similaire.type.slug})) }}" title="{{ similaire.type.libelle|upper }}">{{ similaire.type.libelle|upper }}</a></li>
+                                            <li class="date">{{ actualite.publieLe|date('d M Y') }}</li>
                                         </ul>
                                     </li>
                                 {% endfor %}

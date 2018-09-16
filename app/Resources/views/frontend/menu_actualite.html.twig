@@ -53,16 +53,16 @@
         <ul class="mega_menu blog">
             {% for politique in politiques %}
                 <li class="post">
-                    <a href="#" title="{{ politique.titre }}">
+                    <a href="{{ absolute_url(path('frontend_actualite_show', {'type': politique.type.slug, 'slug': politique.slug})) }}" title="{{ politique.titre }}">
                         {% if politique.imageName %}
                             <img class="img-responsive" src="{{ asset('uploads/actualite/'~ politique.imageName) | imagine_filter('menu') }}" alt="{{ politique.titre }}" />
                         {% else %}
                             <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ politique.titre }}">
                         {% endif %}
                     </a>
-                    <h5><a href="#" title="{{ politique.titre }}">{{ politique.titre }}</a></h5>
+                    <h5><a href="{{ absolute_url(path('frontend_actualite_show', {'type': politique.type.slug, 'slug': politique.slug})) }}" title="{{ politique.titre }}">{{ politique.titre }}</a></h5>
                     <ul class="post_details simple">
-                        <li class="category"><a title="{{ politique.type.libelle|upper }}" href="#">{{ politique.type.libelle|upper }}</a></li>
+                        <li class="category"><a title="{{ politique.type.libelle|upper }}" href="{{ absolute_url(path('frontend_actualite_type', {'type': politique.type.slug})) }}">{{ politique.type.libelle|upper }}</a></li>
                         <li class="date" title="{{ politique.publieLe|date('d M Y') }}">{{ politique.publieLe|date('d M Y') }}</li>
                     </ul>
                 </li>
@@ -77,16 +77,16 @@
         <ul class="mega_menu blog">
             {% for societe in societes %}
                 <li class="post">
-                    <a href="#" title="{{ societe.titre }}">
+                    <a href="{{ absolute_url(path('frontend_actualite_show', {'type': societe.type.slug, 'slug': societe.slug})) }}" title="{{ societe.titre }}">
                         {% if societe.imageName %}
                             <img class="img-responsive" src="{{ asset('uploads/actualite/'~ societe.imageName) | imagine_filter('menu') }}" alt="{{ societe.titre }}" />
                         {% else %}
                             <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ societe.titre }}">
                         {% endif %}
                     </a>
-                    <h5><a href="#" title="{{ societe.titre }}">{{ societe.titre }}</a></h5>
+                    <h5><a href="{{ absolute_url(path('frontend_actualite_show', {'type': societe.type.slug, 'slug': societe.slug})) }}" title="{{ societe.titre }}">{{ societe.titre }}</a></h5>
                     <ul class="post_details simple">
-                        <li class="category"><a title="{{ societe.type.libelle|upper }}" href="#">{{ societe.type.libelle|upper }}</a></li>
+                        <li class="category"><a title="{{ societe.type.libelle|upper }}" href="{{ absolute_url(path('frontend_actualite_type', {'type': societe.type.slug})) }}">{{ societe.type.libelle|upper }}</a></li>
                         <li class="date" title="{{ societe.publieLe|date('d M Y') }}">{{ societe.publieLe|date('d M Y') }}</li>
                     </ul>
                 </li>
@@ -101,16 +101,16 @@
         <ul class="mega_menu blog">
             {% for culture in cultures %}
                 <li class="post">
-                    <a href="#" title="{{ culture.titre }}">
+                    <a href="{{ absolute_url(path('frontend_actualite_show', {'type': culture.type.slug, 'slug': culture.slug})) }}" title="{{ culture.titre }}">
                         {% if culture.imageName %}
                             <img class="img-responsive" src="{{ asset('uploads/actualite/'~ culture.imageName) | imagine_filter('menu') }}" alt="{{ culture.titre }}" />
                         {% else %}
                             <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ culture.titre }}">
                         {% endif %}
                     </a>
-                    <h5><a href="#" title="{{ culture.titre }}">{{ culture.titre }}</a></h5>
+                    <h5><a href="{{ absolute_url(path('frontend_actualite_show', {'type': culture.type.slug, 'slug': culture.slug})) }}" title="{{ culture.titre }}">{{ culture.titre }}</a></h5>
                     <ul class="post_details simple">
-                        <li class="category"><a title="{{ culture.type.libelle|upper }}" href="#">{{ culture.type.libelle|upper }}</a></li>
+                        <li class="category"><a title="{{ culture.type.libelle|upper }}" href="{{ absolute_url(path('frontend_actualite_type', {'type': culture.type.slug})) }}">{{ culture.type.libelle|upper }}</a></li>
                         <li class="date" title="{{ culture.publieLe|date('d M Y') }}">{{ culture.publieLe|date('d M Y') }}</li>
                     </ul>
                 </li>
@@ -125,16 +125,16 @@
         <ul class="mega_menu blog">
             {% for sport in sports %}
                 <li class="post">
-                    <a href="#" title="{{ sport.titre }}">
+                    <a href="{{ absolute_url(path('frontend_actualite_show', {'type': sport.type.slug, 'slug': sport.slug})) }}" title="{{ sport.titre }}">
                         {% if sport.imageName %}
                             <img class="img-responsive" src="{{ asset('uploads/actualite/'~ sport.imageName) | imagine_filter('menu') }}" alt="{{ sport.titre }}" />
                         {% else %}
                             <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ sport.titre }}">
                         {% endif %}
                     </a>
-                    <h5><a href="#" title="{{ sport.titre }}">{{ sport.titre }}</a></h5>
+                    <h5><a href="{{ absolute_url(path('frontend_actualite_show', {'type': sport.type.slug, 'slug': sport.slug})) }}" title="{{ sport.titre }}">{{ sport.titre }}</a></h5>
                     <ul class="post_details simple">
-                        <li class="category"><a title="{{ sport.type.libelle|upper }}" href="#">{{ sport.type.libelle|upper }}</a></li>
+                        <li class="category"><a title="{{ sport.type.libelle|upper }}" href="{{ absolute_url(path('frontend_actualite_type', {'type': sport.type.slug})) }}">{{ sport.type.libelle|upper }}</a></li>
                         <li class="date" title="{{ sport.publieLe|date('d M Y') }}">{{ sport.publieLe|date('d M Y') }}</li>
                     </ul>
                 </li>
@@ -149,16 +149,16 @@
         <ul class="mega_menu blog">
             {% for religion in religions %}
                 <li class="post">
-                    <a href="#" title="{{ religion.titre }}">
+                    <a href="{{ absolute_url(path('frontend_actualite_show', {'type': religion.type.slug, 'slug': religion.slug})) }}" title="{{ religion.titre }}">
                         {% if religion.imageName %}
                             <img class="img-responsive" src="{{ asset('uploads/actualite/'~ religion.imageName) | imagine_filter('menu') }}" alt="{{ religion.titre }}" />
                         {% else %}
                             <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ religion.titre }}">
                         {% endif %}
                     </a>
-                    <h5><a href="#" title="{{ religion.titre }}">{{ religion.titre }}</a></h5>
+                    <h5><a href="{{ absolute_url(path('frontend_actualite_show', {'type': religion.type.slug, 'slug': religion.slug})) }}" title="{{ religion.titre }}">{{ religion.titre }}</a></h5>
                     <ul class="post_details simple">
-                        <li class="category"><a title="{{ religion.type.libelle|upper }}" href="#">{{ religion.type.libelle|upper }}</a></li>
+                        <li class="category"><a title="{{ religion.type.libelle|upper }}" href="{{ absolute_url(path('frontend_actualite_type', {'type': religion.type.slug})) }}">{{ religion.type.libelle|upper }}</a></li>
                         <li class="date" title="{{ religion.publieLe|date('d M Y') }}">{{ religion.publieLe|date('d M Y') }}</li>
                     </ul>
                 </li>

@@ -56,38 +56,38 @@
                         <ul class="blog column column_1_2">
                             {% for actualite1 in actualites1 %}
                                 <li class="post">
-                                    <a href="#" title="{{ actualite1.titre }}">
+                                    <a href="{{ absolute_url(path('frontend_actualite_show', {'type': actualite1.type.slug, 'slug': actualite1.slug})) }}" title="{{ actualite1.titre }}">
                                         <img src="{{ asset('uploads/actualite/'~ actualite1.imageName) | imagine_filter('accueil_treich_event') }}" alt='{{ actualite1.titre }}'>
                                     </a>
                                     <h2 class="with_number">
-                                        <a href="#" title="{{ actualite1.titre }}">{{ actualite1.titre }}</a>
+                                        <a href="{{ absolute_url(path('frontend_actualite_show', {'type': actualite1.type.slug, 'slug': actualite1.slug})) }}" title="{{ actualite1.titre }}">{{ actualite1.titre }}</a>
                                         <!--<a class="comments_number" href="" title="2 comments">2<span class="arrow_comments"></span></a>-->
                                     </h2>
                                     <ul class="post_details">
-                                        <li class="category"><a href="#" title="{{ actualite1.type.libelle }}">{{ actualite1.type.libelle }}</a></li>
+                                        <li class="category"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': actualite1.type.slug})) }}" title="{{ actualite1.type.libelle }}">{{ actualite1.type.libelle }}</a></li>
                                         <li class="date">{{ actualite1.publieLe|date('d M Y') }}</li>
                                     </ul>
                                     <p>{{ actualite1.resume|raw }}</p>
-                                    <a class="read_more" href="#" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
+                                    <a class="read_more" href="{{ absolute_url(path('frontend_actualite_show', {'type': actualite1.type.slug, 'slug': actualite1.slug})) }}" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
                                 </li>
                             {% endfor %}
                         </ul>
                         <ul class="blog column column_1_2">
                             {% for actualite2 in actualites2 %}
                                 <li class="post">
-                                    <a href="#" title="{{ actualite2.titre }}">
+                                    <a href="{{ absolute_url(path('frontend_actualite_show', {'type': actualite2.type.slug, 'slug': actualite2.slug})) }}" title="{{ actualite2.titre }}">
                                         <img src="{{ asset('uploads/actualite/'~ actualite2.imageName) | imagine_filter('accueil_treich_event') }}" alt='{{ actualite2.titre }}'>
                                     </a>
                                     <h2 class="with_number">
-                                        <a href="#" title="{{ actualite2.titre }}">{{ actualite2.titre }}</a>
+                                        <a href="{{ absolute_url(path('frontend_actualite_show', {'type': actualite2.type.slug, 'slug': actualite2.slug})) }}" title="{{ actualite2.titre }}">{{ actualite2.titre }}</a>
                                         <!--<a class="comments_number" href="#" title="2 comments">2<span class="arrow_comments"></span></a>-->
                                     </h2>
                                     <ul class="post_details">
-                                        <li class="category"><a href="#" title="{{ actualite2.type.libelle }}">{{ actualite2.type.libelle }}</a></li>
+                                        <li class="category"><a href="{{ absolute_url(path('frontend_actualite_type', {'type': actualite2.type.slug})) }}" title="{{ actualite2.type.libelle }}">{{ actualite2.type.libelle }}</a></li>
                                         <li class="date">{{ actualite2.publieLe|date('d M Y') }}</li>
                                     </ul>
                                     <p>{{ actualite2.resume|raw }}</p>
-                                    <a class="read_more" href="#" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
+                                    <a class="read_more" href="{{ absolute_url(path('frontend_actualite_show', {'type': actualite2.type.slug, 'slug': actualite2.slug})) }}" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
                                 </li>
                             {% endfor %}
                         </ul>

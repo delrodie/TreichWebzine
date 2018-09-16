@@ -11,6 +11,26 @@ namespace AppBundle\Repository;
 class ActualiteRepository extends \Doctrine\ORM\EntityRepository
 {
     /**
+     * Compteur d'articles
+     */
+    public function compteur($statut = null, $type = null)
+    {
+        if ($statut && $type){
+            return $this->listDesc()->select('count(a.id)')
+                        ->leftJoin('a.type', 't')
+                        ->where('t.slug = :type')
+                        ->andWhere('a.statut = 1')
+                        ->setParameter('type', $type)
+                        ->getQuery()->getSingleScalarResult()
+                ;
+        }elseif ($statut){
+            return $this->listDesc()->select('count(a.id)')->where('a.statut = 1')->getQuery()->getSingleScalarResult();
+        }else{
+            return $this->listDesc()->select('count(a.id)')->getQuery()->getSingleScalarResult();
+        }
+    }
+
+    /**
      * Liste des actualités
      */
     public function findListDesc($statut = null, $limit = null, $offset = null)
