@@ -23,22 +23,22 @@
         </ul>
     </li>
     <li class="submenu">
-        <a href="#" title="Derniers articles de dossier">
+        <a href="{{ absolute_url(path('frontend_dossier')) }}" title="Les articles de dossier">
             Dossier
         </a>
         <ul class="mega_menu blog">
             {% for dossier in dossiers %}
                 <li class="post">
-                    <a href="#" title="{{ dossier.titre }}">
+                    <a href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="{{ dossier.titre }}">
                         {% if dossier.imageName %}
                             <img class="img-responsive" src="{{ asset('uploads/dossiers/'~ dossier.imageName) | imagine_filter('menu') }}" alt="{{ dossier.titre }}" />
                         {% else %}
                             <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ dossier.titre }}">
                         {% endif %}
                     </a>
-                    <h5><a href="#" title="{{ dossier.titre }}">{{ dossier.titre }}</a></h5>
+                    <h5><a href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="{{ dossier.titre }}">{{ dossier.titre }}</a></h5>
                     <ul class="post_details simple">
-                        <li class="category"><a title="{{ dossier.type.libelle|upper }}" href="#">{{ dossier.type.libelle|upper }}</a></li>
+                        <li class="category"><a title="{{ dossier.type.libelle|upper }}" href="{{ absolute_url(path('frontend_dossier_type', {'type': dossier.type.slug})) }}">{{ dossier.type.libelle|upper }}</a></li>
                         <li class="date timeago current" title="{{ dossier.publieLe|date('d M Y') }}">{{ dossier.publieLe|date('d M Y') }}</li>
                     </ul>
                 </li>

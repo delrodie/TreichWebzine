@@ -16,9 +16,14 @@ class AgendaRepository extends \Doctrine\ORM\EntityRepository
     public function compteur($statut = null)
     {
         if ($statut){
-            return $this->listDesc($limit = null, $offset = null)->select('count(a.id)')->where('a.statut = 1')->getQuery()->getSingleScalarResult();
+            return $this->listDesc($limit = null, $offset = null)
+                        ->select('count(a.id)')
+                        ->where('a.statut = 1')
+                        ->getQuery()->getSingleScalarResult();
         }else{
-            return $this->listDesc($limit = null, $offset = null)->select('count(a.id)')->getQuery()->getSingleScalarResult();
+            return $this->listDesc($limit = null, $offset = null)
+                        ->select('count(a.id)')
+                        ->getQuery()->getSingleScalarResult();
         }
     }
 

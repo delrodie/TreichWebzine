@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
-{% block title %}Liste des agendas de Treichville{% endblock %}
+{% block title %}Liste des dossiers de Treichville{% endblock %}
 {% block body %}
     <div class="page">
         <div class="page_header clearfix page_margin_top">
             <div class="page_header_left">
-                <h1 class="page_title">Agenda</h1>
+                <h1 class="page_title">dossier</h1>
             </div>
             <div class="page_header_right">
                 <ul class="bread_crumb">
@@ -12,7 +12,7 @@
                     <li class="separator icon_small_arrow right_gray">&nbsp;</li>
                     <li><a href="#">Actualités</a></li>
                     <li class="separator icon_small_arrow right_gray">&nbsp;</li>
-                    <li>Agenda</li>
+                    <li>dossier</li>
                 </ul>
             </div>
         </div>
@@ -26,51 +26,51 @@
                 <div class="column column_2_3">
                     <div class="row">
                         <ul class="blog column column_1_2">
-                            {% for agenda in agenda1s %}
+                            {% for dossier in dossier1s %}
                                 <li class="post">
-                                    <a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.titre }}">
-                                        {% if agenda.imageName %}
-                                            <img class="img-responsive" src="{{ asset('uploads/agenda/'~ agenda.imageName) | imagine_filter('accueil_treich_event') }}" alt="{{ agenda.titre }}" />
+                                    <a href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="{{ dossier.titre }}">
+                                        {% if dossier.imageName %}
+                                            <img class="img-responsive" src="{{ asset('uploads/dossiers/'~ dossier.imageName) | imagine_filter('accueil_treich_event') }}" alt="{{ dossier.titre }}" />
                                         {% else %}
-                                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('accueil_treich_event') }}" alt="{{ agenda.titre }}">
+                                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('accueil_treich_event') }}" alt="{{ dossier.titre }}">
                                         {% endif %}
                                     </a>
                                     <div class="post_content">
                                         <h2 class="with_number">
-                                            <a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.titre }}">{{ agenda.titre }}</a>
+                                            <a href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="{{ dossier.titre }}">{{ dossier.titre }}</a>
                                             <!--<a class="comments_number" href="" title="2 comments">2<span class="arrow_comments"></span></a>-->
                                         </h2>
                                         <ul class="post_details">
-                                            <li class="category"><a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.typeevent.libelle|upper }}">{{ agenda.typeevent.libelle|upper }}</a></li>
-                                            <li class="date">{{ agenda.publieLe|date('d M Y') }}</li>
+                                            <li class="category"><a href="{{ absolute_url(path('frontend_dossier_type', {'type': dossier.type.slug})) }}" title="{{ dossier.type.libelle|upper }}">{{ dossier.type.libelle|upper }}</a></li>
+                                            <li class="date">{{ dossier.publieLe|date('d M Y') }}</li>
                                         </ul>
-                                        <p>{{ agenda.resume|raw }}</p>
-                                        <a class="read_more" href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
+                                        <p>{{ dossier.resume|raw }}</p>
+                                        <a class="read_more" href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
                                     </div>
-                                </li>  
+                                </li>
                             {% endfor %}
                         </ul>
                         <ul class="blog column column_1_2">
-                            {% for agenda in agenda2s %}
+                            {% for dossier in dossier2s %}
                                 <li class="post">
-                                    <a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.titre }}">
-                                        {% if agenda.imageName %}
-                                            <img class="img-responsive" src="{{ asset('uploads/agenda/'~ agenda.imageName) | imagine_filter('accueil_treich_event') }}" alt="{{ agenda.titre }}" />
+                                    <a href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="{{ dossier.titre }}">
+                                        {% if dossier.imageName %}
+                                            <img class="img-responsive" src="{{ asset('uploads/dossiers/'~ dossier.imageName) | imagine_filter('accueil_treich_event') }}" alt="{{ dossier.titre }}" />
                                         {% else %}
-                                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('accueil_treich_event') }}" alt="{{ agenda.titre }}">
+                                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('accueil_treich_event') }}" alt="{{ dossier.titre }}">
                                         {% endif %}
                                     </a>
                                     <div class="post_content">
                                         <h2 class="with_number">
-                                            <a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.titre }}">{{ agenda.titre }}</a>
+                                            <a href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="{{ dossier.titre }}">{{ dossier.titre }}</a>
                                             <!--<a class="comments_number" href="" title="2 comments">2<span class="arrow_comments"></span></a>-->
                                         </h2>
                                         <ul class="post_details">
-                                            <li class="category"><a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.typeevent.libelle|upper }}">{{ agenda.typeevent.libelle|upper }}</a></li>
-                                            <li class="date">{{ agenda.publieLe|date('d M Y') }}</li>
+                                            <li class="category"><a href="{{ absolute_url(path('frontend_dossier_type', {'type': dossier.type.slug})) }}" title="{{ dossier.type.libelle|upper }}">{{ dossier.type.libelle|upper }}</a></li>
+                                            <li class="date">{{ dossier.publieLe|date('d M Y') }}</li>
                                         </ul>
-                                        <p>{{ agenda.resume|raw }}</p>
-                                        <a class="read_more" href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
+                                        <p>{{ dossier.resume|raw }}</p>
+                                        <a class="read_more" href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
                                     </div>
                                 </li>
                             {% endfor %}

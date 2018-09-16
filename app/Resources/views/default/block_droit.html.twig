@@ -40,7 +40,7 @@
 <ul class="blog small clearfix">
     {% for dossier in dossiers %}
         <li class="post">
-            <a href="#" title="{{ dossier.titre }}">
+            <a href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="{{ dossier.titre }}">
                 {% if dossier.imageName %}
                     <img class="img-responsive" src="{{ asset('uploads/dossiers/'~ dossier.imageName) | imagine_filter('accueil_treich_info') }}" alt="{{ dossier.titre }}" />
                 {% else %}
@@ -49,10 +49,10 @@
             </a>
             <div class="post_content">
                 <h5>
-                    <a href="#" title="{{ dossier.titre }}">{{ dossier.titre }}</a>
+                    <a href="{{ absolute_url(path('frontend_dossier_show', {'type': dossier.type.slug, 'slug': dossier.slug})) }}" title="{{ dossier.titre }}">{{ dossier.titre }}</a>
                 </h5>
                 <ul class="post_details simple">
-                    <li class="category"><a href="#" title="{{ dossier.type.libelle|upper }}">{{ dossier.type.libelle|upper }}</a></li>
+                    <li class="category"><a href="{{ absolute_url(path('frontend_dossier_type', {'type': dossier.type.slug})) }}" title="{{ dossier.type.libelle|upper }}">{{ dossier.type.libelle|upper }}</a></li>
                     <li class="date">{{ dossier.publieLe|date('d M Y') }}</li>
                 </ul>
             </div>

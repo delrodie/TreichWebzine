@@ -11,6 +11,27 @@ namespace AppBundle\Repository;
 class DossierRepository extends \Doctrine\ORM\EntityRepository
 {
     /**
+     * Compteur d'articles
+     */
+    public function compteur($statut = null, $type = null)
+    {
+        if ($statut && $type){
+            return $this->listDesc()->select('count(d.id)')
+                        ->leftJoin('d.type', 't')
+                        ->where('t.slug = :type')
+                        ->andWhere('d.statut = 1')
+                        ->setParameter('type', $type)
+                        ->getQuery()->getSingleScalarResult();
+        }elseif ($statut){
+            return $this->listDesc()->select('count(d.id)')
+                        ->where('d.statut = 1')
+                        ->getQuery()->getSingleScalarResult();
+        }else{
+            return $this->listDesc()->select('count(d.id)')->getQuery()->getSingleScalarResult();
+        }
+    }
+
+    /**
      * Liste des dossiers
      */
     public function findListDesc($statut = null, $limit = null, $offset = null)
@@ -19,6 +40,36 @@ class DossierRepository extends \Doctrine\ORM\EntityRepository
             return $this->listDesc($limit, $offset)->where('d.statut = 1')->getQuery()->getResult();
         } else{
             return$this->listDesc($limit, $offset)->getQuery()->getResult();
+        }
+    }
+
+    /**
+     * Liste des dossiers selon le type
+     */
+    public function findlistByType($type, $slug = null, $limit = null, $offset = null)
+    {
+        if ($slug){
+            return $this->listDesc($limit, $offset)
+                ->leftJoin('d.type', 't')
+                ->where('t.slug = :type')
+                ->andWhere('d.slug <> :slug')
+                ->andWhere('d.statut = 1')
+                ->setParameters([
+                    'type' => $type,
+                    'slug' => $slug
+                ])
+                ->getQuery()->getResult()
+                ;
+        }else{
+            return $this->listDesc($limit, $offset)
+                ->leftJoin('d.type', 't')
+                ->where('t.slug = :type')
+                ->andWhere('d.statut = 1')
+                ->setParameters([
+                    'type' => $type,
+                ])
+                ->getQuery()->getResult()
+                ;
         }
     }
 

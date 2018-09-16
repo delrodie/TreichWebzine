@@ -29,7 +29,8 @@
         <link rel="stylesheet" href="{{ absolute_url(asset_url)}}" />
         {% endstylesheets %}
     {% endblock %}
-    <link rel="shortcut icon" href="{{ absolute_url('frontend/images/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ absolute_url(asset('frontend/images/favicon.ico')) }}">
+
 </head>
 
 <body class="image_1 overlay">
@@ -407,7 +408,7 @@
                                 <p>
                                 <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_agenda')) }}">Agenda <span style="float: right;">{{ render(url('frontend_agenda_compteur')) }}</span></a></div>
                                 <div style="margin-bottom: 7px;"><a href="#">Cultures <span style="float: right;">0</span></a></div>
-                                <div style="margin-bottom: 7px;"><a href="#">Dossiers <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_dossier')) }}">Dossiers <span style="float: right;">{{ render(url('frontend_dossier_compteur')) }}</span></a></div>
                                 <div style="margin-bottom: 7px;"><a href="#">Educations <span style="float: right;">0</span></a></div>
                                 <div style="margin-bottom: 7px;"><a href="#">Environnements <span style="float: right;">0</span></a></div>
                                 </p>
