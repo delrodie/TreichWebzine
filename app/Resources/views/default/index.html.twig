@@ -32,11 +32,11 @@
                             <ul class="blog horizontal_carousel autoplay-1 scroll-1 navigation-1 easing-easeInOutQuint duration-750">
                                 {% for agenda in agendas %}
                                     <li class="post">
-                                        <a href="" title="{{ agenda.titre }}">
+                                        <a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.titre }}">
                                             <img src='{{ asset('uploads/agenda/'~ agenda.imageName) | imagine_filter('accueil_treich_event') }}' alt='{{ agenda.titre }}'>
                                             <!--<img src='images/samples/330x242/image_08.jpg' alt='{{ agenda.titre }}'>-->
                                         </a>
-                                        <h5><a href="" title="{{ agenda.titre }}">{{ agenda.titre }}</a></h5>
+                                        <h5><a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.titre }}">{{ agenda.titre }}</a></h5>
                                         <ul class="post_details simple">
                                             <li class="category"><a href="#" title="{{ agenda.typeevent.libelle }}">{{ agenda.typeevent.libelle|upper }}</a></li>
                                             <li class="date">{{ agenda.publieLe|date('d M Y') }}</li>
@@ -341,7 +341,7 @@
                     </div>
 
                     <div class="row page_margin_top clearfix">
-                        <img src="images/header-01.png" class="img-responsive">
+                        <img src="{{ absolute_url(asset('frontend/images/header-01.png')) }}" class="img-responsive">
                     </div>
 
                 </div>

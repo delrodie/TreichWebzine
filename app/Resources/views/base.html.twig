@@ -76,7 +76,7 @@
     <div class="header_container style_4 small">
         <div class="header clearfix">
             <div class="logo column column_1_3">
-                <h1><a href="#" title="Pressroom">
+                <h1><a href="{{ absolute_url(path('homepage')) }}" title="Pressroom">
                         <img src="{{ absolute_url(asset('frontend/images/logo-tw.png')) }}" class="img-responsive" alt="Logo Treichville Webzine">
                     </a></h1>
                 <h4>Portail d'informations de la commune</h4>
@@ -405,7 +405,7 @@
                         <div class="row">
                             <div class="column column_1_2">
                                 <p>
-                                <div style="margin-bottom: 7px;"><a href="#">Agenda <span style="float: right;">0</span></a></div>
+                                <div style="margin-bottom: 7px;"><a href="{{ absolute_url(path('frontend_agenda')) }}">Agenda <span style="float: right;">{{ render(url('frontend_agenda_compteur')) }}</span></a></div>
                                 <div style="margin-bottom: 7px;"><a href="#">Cultures <span style="float: right;">0</span></a></div>
                                 <div style="margin-bottom: 7px;"><a href="#">Dossiers <span style="float: right;">0</span></a></div>
                                 <div style="margin-bottom: 7px;"><a href="#">Educations <span style="float: right;">0</span></a></div>

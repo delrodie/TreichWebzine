@@ -11,6 +11,18 @@ namespace AppBundle\Repository;
 class AgendaRepository extends \Doctrine\ORM\EntityRepository
 {
     /**
+     * Compteur du nombre d'articles actifs
+     */
+    public function compteur($statut = null)
+    {
+        if ($statut){
+            return $this->listDesc($limit = null, $offset = null)->select('count(a.id)')->where('a.statut = 1')->getQuery()->getSingleScalarResult();
+        }else{
+            return $this->listDesc($limit = null, $offset = null)->select('count(a.id)')->getQuery()->getSingleScalarResult();
+        }
+    }
+
+    /**
      * Liste des agendas
      */
     public function findListDesc($statut = null, $limit = null, $offset = null)

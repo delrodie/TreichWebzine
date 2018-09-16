@@ -1,19 +1,19 @@
 <ul>
     <li class="submenu">
-        <a href="#" title="Les derniers agendas">
+        <a href="{{ absolute_url(path('frontend_agenda')) }}" title="Voir les agendas">
             Agenda
         </a>
         <ul class="mega_menu blog">
             {% for agenda in agendas %}
                 <li class="post">
-                    <a href="#" title="{{ agenda.titre }}">
+                    <a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.titre }}">
                         {% if agenda.imageName %}
                             <img class="img-responsive" src="{{ asset('uploads/agenda/'~ agenda.imageName) | imagine_filter('menu') }}" alt="{{ agenda.titre }}" />
                         {% else %}
                             <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('menu') }}" alt="{{ agenda.titre }}">
                         {% endif %}
                     </a>
-                    <h5><a href="#" title="{{ agenda.titre }}">{{ agenda.titre }}</a></h5>
+                    <h5><a href="{{ absolute_url(path('frontend_agenda_show', {'type': agenda.typeevent.slug, 'slug': agenda.slug})) }}" title="{{ agenda.titre }}">{{ agenda.titre }}</a></h5>
                     <ul class="post_details simple">
                         <li class="category"><a title="{{ agenda.typeevent.libelle|upper }}" href="#">{{ agenda.typeevent.libelle|upper }}</a></li>
                         <li class="date timeago current" title="{{ agenda.publieLe|date('d M Y') }}">{{ agenda.publieLe|date('d M Y') }}</li>
