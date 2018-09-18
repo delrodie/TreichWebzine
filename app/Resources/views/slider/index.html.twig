@@ -30,6 +30,11 @@
                                 <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/user-info.jpg')) }}" alt="{{ slider.titre }}">
                             {% endif %}
                             <div class="box-body">
+                                Publication du:
+                                {% if slider.datedeb %}
+                                    <span class="badge badge-warning">{{ slider.datedeb|date('d M Y') }}</span> au
+                                    <span class="badge badge-warning">{{ slider.datefin|date('d M Y') }}</span>
+                                {% endif %}
                                 <h4 class="card-title">
                                     {% if slider.statut %}
                                         <span class="badge badge-success">{{ slider.type.libelle }}</span>

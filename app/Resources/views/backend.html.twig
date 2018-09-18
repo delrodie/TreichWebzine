@@ -139,7 +139,11 @@
             <li><a href="{{ absolute_url(path('backend_agenda_index'))}}"><i class="fa fa-newspaper"></i> Agendas</a></li>
             <li><a href="#"><i class="fa fa-newspaper"></i> Publicités</a></li>
             <li><a href="{{ absolute_url(path('backend_information_index'))}}"><i class="fa fa-newspaper"></i> Informations</a></li>
-            <li><a href="{{ absolute_url(path('backend_slider_index'))}}"><i class="fa fa-picture-o"></i> Sliders</a></li>
+            <li>
+              <a href="{{ absolute_url(path('backend_slider_index'))}}"><i class="fa fa-picture-o"></i>
+                Sliders <span class="badge badge-primary">{{ render(url('frontend_slider_compteur')) }}</span>
+              </a>
+            </li>
           </ul>
         </li>
         <li class="treeview">

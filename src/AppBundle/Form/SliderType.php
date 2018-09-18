@@ -39,6 +39,18 @@ class SliderType extends AbstractType
                 ],
                 'required' => false
             ])
+            ->add('datedeb', TextType::class,[
+                'attr' => [
+                    'class' => 'form-control pull-right',
+                    'placeholder' => 'La date debut de publication'
+                ]
+            ])
+            ->add('datefin', TextType::class,[
+                'attr' => [
+                    'class' => 'form-control pull-right',
+                    'placeholder' => 'La date fin de publication'
+                ]
+            ])
             ->add('statut', CheckboxType::class,[
                 'required' => false
             ])

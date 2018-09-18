@@ -47,6 +47,20 @@ class Slider
     private $lien;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="datedeb", type="string", length=255, nullable=true)
+     */
+    private $datedeb;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datefin", type="string", length=255, nullable=true)
+     */
+    private $datefin;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="statut", type="boolean", nullable=true)
@@ -482,5 +496,53 @@ class Slider
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Set datedeb
+     *
+     * @param string $datedeb
+     *
+     * @return Slider
+     */
+    public function setDatedeb($datedeb)
+    {
+        $this->datedeb = $datedeb;
+
+        return $this;
+    }
+
+    /**
+     * Get datedeb
+     *
+     * @return string
+     */
+    public function getDatedeb()
+    {
+        return $this->datedeb;
+    }
+
+    /**
+     * Set datefin
+     *
+     * @param string $datefin
+     *
+     * @return Slider
+     */
+    public function setDatefin($datefin)
+    {
+        $this->datefin = $datefin;
+
+        return $this;
+    }
+
+    /**
+     * Get datefin
+     *
+     * @return string
+     */
+    public function getDatefin()
+    {
+        return $this->datefin;
     }
 }
