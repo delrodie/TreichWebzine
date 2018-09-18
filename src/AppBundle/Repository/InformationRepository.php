@@ -16,9 +16,15 @@ class InformationRepository extends \Doctrine\ORM\EntityRepository
     public function findListDesc($statut = null, $limit = null, $offset = null)
     {
         if ($statut){
-            return $this->listDesc($limit, $offset)->where('i.statut = 1')->getQuery()->getResult();
+            return $this->listDesc($limit, $offset)
+                        ->where('i.statut = 1')
+                        ->andWhere(':periode BETWEEN i.datedeb AND i.datefin')
+                        ->orderBy('i.datefin', 'DESC')
+                        ->setParameter('periode', date('Y-m-d', time()))
+                        ->getQuery()->getResult()
+                ;
         }else{
-            return $this->listDesc($limit, $offset)->getQuery()->getResult();
+            return $this->listDesc($limit, $offset)->orderBy('i.datefin', 'DESC')->getQuery()->getResult();
         }
     }
 
@@ -28,7 +34,6 @@ class InformationRepository extends \Doctrine\ORM\EntityRepository
     public function findListSimilaire($type, $id, $limit = null, $offset = null)
     {
         return $this->listDesc($limit,$offset)
-                    ->leftJoin('i.typinfo', 't')
                     ->where('t.id = :type')
                     ->andWhere('i.statut = 1')
                     ->andWhere('i.id <> :id')
@@ -46,6 +51,8 @@ class InformationRepository extends \Doctrine\ORM\EntityRepository
     public function listDesc($limit = null, $offset = null)
     {
         return $this->createQueryBuilder('i')
+                    ->addSelect('t')
+                    ->leftJoin('i.typinfo', 't')
                     ->orderBy('i.id', 'DESC')
                     ->setFirstResult($offset)
                     ->setMaxResults($limit)

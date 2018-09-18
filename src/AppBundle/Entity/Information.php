@@ -54,6 +54,20 @@ class Information
     private $tags;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="datedeb", type="string", length=15, nullable=true)
+     */
+    private $datedeb;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datefin", type="string", length=15, nullable=true)
+     */
+    private $datefin;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="statut", type="boolean", nullable=true)
@@ -512,5 +526,53 @@ class Information
     public function getTypinfo()
     {
         return $this->typinfo;
+    }
+
+    /**
+     * Set datedeb
+     *
+     * @param string $datedeb
+     *
+     * @return Information
+     */
+    public function setDatedeb($datedeb)
+    {
+        $this->datedeb = $datedeb;
+
+        return $this;
+    }
+
+    /**
+     * Get datedeb
+     *
+     * @return string
+     */
+    public function getDatedeb()
+    {
+        return $this->datedeb;
+    }
+
+    /**
+     * Set datefin
+     *
+     * @param string $datefin
+     *
+     * @return Information
+     */
+    public function setDatefin($datefin)
+    {
+        $this->datefin = $datefin;
+
+        return $this;
+    }
+
+    /**
+     * Get datefin
+     *
+     * @return string
+     */
+    public function getDatefin()
+    {
+        return $this->datefin;
     }
 }

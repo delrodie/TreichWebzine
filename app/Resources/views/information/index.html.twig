@@ -29,7 +29,12 @@
               {% else %}
                   <img class="card-img-top img-responsive" src="{{ absolute_url(asset('backoffice/images/user-info.jpg')) }}" alt="{{ information.titre }}">
               {% endif %}
-                <div class="box-body">            	
+                <div class="box-body">
+                    Publication du:
+                    {% if information.datedeb %}
+                        <span class="badge badge-warning">{{ information.datedeb|date('d M Y') }}</span> au
+                        <span class="badge badge-warning">{{ information.datefin|date('d M Y') }}</span>
+                    {% endif %}
                     <h4 class="card-title">
                     {% if information.statut %}
                         <span class="badge badge-success">{{ information.typinfo.libelle }}</span>

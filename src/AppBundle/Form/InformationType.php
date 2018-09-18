@@ -45,6 +45,18 @@ class InformationType extends AbstractType
             ->add('statut', CheckboxType::class, [
                 'required' => false,
             ])
+            ->add('datedeb', TextType::class,[
+                'attr' => [
+                    'class' => 'form-control pull-right',
+                    'placeholder' => 'Debut periode de publication'
+                ]
+            ])
+            ->add('datefin', TextType::class,[
+                'attr' => [
+                    'class' => 'form-control pull-right',
+                    'placeholder' => 'Fin periode de publication'
+                ]
+            ])
             ->add('imageFile', VichImageType::class, [
                 'required' => false,
                 'allow_delete' => true,

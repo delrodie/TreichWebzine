@@ -50,7 +50,6 @@ class DossierRepository extends \Doctrine\ORM\EntityRepository
     {
         if ($slug){
             return $this->listDesc($limit, $offset)
-                ->leftJoin('d.type', 't')
                 ->where('t.slug = :type')
                 ->andWhere('d.slug <> :slug')
                 ->andWhere('d.statut = 1')
@@ -62,7 +61,6 @@ class DossierRepository extends \Doctrine\ORM\EntityRepository
                 ;
         }else{
             return $this->listDesc($limit, $offset)
-                ->leftJoin('d.type', 't')
                 ->where('t.slug = :type')
                 ->andWhere('d.statut = 1')
                 ->setParameters([
@@ -79,6 +77,8 @@ class DossierRepository extends \Doctrine\ORM\EntityRepository
     public function listDesc($limit = null, $offset = null)
     {
         return $this->createQueryBuilder('d')
+                    ->addSelect('t')
+                    ->leftJoin('d.type', 't')
                     ->orderBy('d.id', 'DESC')
                     ->setFirstResult($offset)
                     ->setMaxResults($limit)
