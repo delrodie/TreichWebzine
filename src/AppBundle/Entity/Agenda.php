@@ -54,6 +54,20 @@ class Agenda
     private $tags;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="datedeb", type="string", length=15, nullable=true)
+     */
+    private $datedeb;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="datefin", type="string", length=15, nullable=true)
+     */
+    private $datefin;
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="statut", type="boolean", nullable=true)
@@ -513,5 +527,53 @@ class Agenda
     public function getTypeevent()
     {
         return $this->typeevent;
+    }
+
+    /**
+     * Set datedeb
+     *
+     * @param string $datedeb
+     *
+     * @return Agenda
+     */
+    public function setDatedeb($datedeb)
+    {
+        $this->datedeb = $datedeb;
+
+        return $this;
+    }
+
+    /**
+     * Get datedeb
+     *
+     * @return string
+     */
+    public function getDatedeb()
+    {
+        return $this->datedeb;
+    }
+
+    /**
+     * Set datefin
+     *
+     * @param string $datefin
+     *
+     * @return Agenda
+     */
+    public function setDatefin($datefin)
+    {
+        $this->datefin = $datefin;
+
+        return $this;
+    }
+
+    /**
+     * Get datefin
+     *
+     * @return string
+     */
+    public function getDatefin()
+    {
+        return $this->datefin;
     }
 }

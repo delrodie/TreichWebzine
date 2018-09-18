@@ -33,9 +33,15 @@ class AgendaRepository extends \Doctrine\ORM\EntityRepository
     public function findListDesc($statut = null, $limit = null, $offset = null)
     {
         if ($statut){
-            return $this->listDesc($limit, $offset)->where('a.statut = 1')->getQuery()->getResult();
+            return $this->listDesc($limit, $offset)
+                        ->where('a.statut = 1')
+                        ->andWhere(':periode BETWEEN a.datedeb AND a.datefin')
+                        ->orderBy('a.datefin', 'ASC')
+                        ->setParameter('periode', date('Y-m-d', time()))
+                        ->getQuery()->getResult()
+                ;
         } else{
-            return $this->listDesc($limit, $offset)->getQuery()->getResult();
+            return $this->listDesc($limit, $offset)->orderBy('a.datefin', 'DESC')->getQuery()->getResult();
         }
     }
 
@@ -45,6 +51,8 @@ class AgendaRepository extends \Doctrine\ORM\EntityRepository
     public function listDesc($limit = null, $offset = null)
     {
         return $this->createQueryBuilder('a')
+                    ->addSelect('t')
+                    ->leftJoin('a.typeevent', 't')
                     ->orderBy('a.id', 'DESC')
                     ->setFirstResult($offset)
                     ->setMaxResults($limit)

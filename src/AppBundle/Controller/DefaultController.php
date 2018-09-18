@@ -17,8 +17,8 @@ class DefaultController extends Controller
         $agendas = $em->getRepository('AppBundle:Agenda')->findListDesc(1);
         $actualites1 = $em->getRepository('AppBundle:Actualite')->findListDesc(1, 2,0);
         $actualites2 = $em->getRepository('AppBundle:Actualite')->findListDesc(1,2,2);
-        $lifestyleIntros = $em->getRepository('AppBundle:Lifestyle')->findLifestyleActifDesc(1,0);
-        $lifestyles = $em->getRepository('AppBundle:Lifestyle')->findLifestyleActifDesc(4,1);
+        $lifestyleIntros = $em->getRepository('AppBundle:Lifestyle')->findListDesc(1,1,0);
+        $lifestyles = $em->getRepository('AppBundle:Lifestyle')->findListDesc(1,4,1);
         $sliders = $em->getRepository('AppBundle:Slider')->findListDesc(1,6,0);
         return $this->render('default/index.html.twig', [
             'agendas' => $agendas,

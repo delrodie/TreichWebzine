@@ -25,7 +25,12 @@
            <div class="col-md-12 col-lg-3">
             <div class="box box-default" style="height: 500px">
                 <img class="card-img-top img-responsive" src="{{ vich_uploader_asset(agenda, 'imageFile') }}" alt="Card image cap">
-                <div class="box-body">            	
+                <div class="box-body">
+                    Publication du:
+                    {% if agenda.datedeb %}
+                        <span class="badge badge-warning">{{ agenda.datedeb|date('d M Y') }}</span> au
+                        <span class="badge badge-warning">{{ agenda.datefin|date('d M Y') }}</span>
+                    {% endif %}
                     <h4 class="card-title">
                     {% if agenda.statut %}
                         <span class="badge badge-success">{{ agenda.typeevent.libelle }}</span>

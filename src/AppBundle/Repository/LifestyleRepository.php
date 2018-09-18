@@ -10,28 +10,30 @@ namespace AppBundle\Repository;
  */
 class LifestyleRepository extends \Doctrine\ORM\EntityRepository
 {
+
     /**
-     * Liste decroissante des articles de lifestyle
+     * Liste des lifestyle
      */
-    public function findAllDesc()
+    public function findListDesc($statut = null, $limit = null, $offset = null)
     {
-        return $this->createQueryBuilder('l')
-                    ->orderBy('l.id', 'DESC')
-                    ->getQuery()->getResult()
-            ;
+        if ($statut){
+            return $this->listDesc($limit, $offset)->where('l.statut = 1')->getQuery()->getResult();
+        }else{
+            return $this->listDesc($limit, $offset)->getQuery()->getResult();
+        }
     }
 
     /**
-     *
+     * Recherche des lifestyle
      */
-    public function findLifestyleActifDesc($limit, $offset)
+    public function listDesc($limit = null, $offset)
     {
         return $this->createQueryBuilder('l')
-                    ->where('l.statut = 1')
+                    ->addSelect('t')
+                    ->leftJoin('l.type', 't')
                     ->orderBy('l.id', 'DESC')
                     ->setFirstResult($offset)
                     ->setMaxResults($limit)
-                    ->getQuery()->getResult()
             ;
     }
 }

@@ -17,7 +17,6 @@ class ActualiteRepository extends \Doctrine\ORM\EntityRepository
     {
         if ($statut && $type){
             return $this->listDesc()->select('count(a.id)')
-                        ->leftJoin('a.type', 't')
                         ->where('t.slug = :type')
                         ->andWhere('a.statut = 1')
                         ->setParameter('type', $type)
@@ -49,7 +48,6 @@ class ActualiteRepository extends \Doctrine\ORM\EntityRepository
     {
         if ($type2){
             return $this->listDesc($limit, $offset)
-                        ->leftJoin('a.type', 't')
                         ->where('t.slug LIKE :type1')
                         ->orWhere('t.slug LIKE :type2')
                         ->andWhere('a.statut = 1')
@@ -61,7 +59,6 @@ class ActualiteRepository extends \Doctrine\ORM\EntityRepository
                 ;
         } else{
             return $this->listDesc($limit, $offset)
-                        ->leftJoin('a.type', 't')
                         ->where('t.slug LIKE :type')
                         ->andWhere('a.statut = 1')
                         ->setParameter('type', '%'.$type1.'%')
@@ -76,6 +73,8 @@ class ActualiteRepository extends \Doctrine\ORM\EntityRepository
     public function listDesc ($limit=null, $offset=null)
     {
         return $this->createQueryBuilder('a')
+                    ->addSelect('t')
+                    ->leftJoin('a.type', 't')
                     ->orderBy('a.id', 'DESC')
                     ->setFirstResult($offset)
                     ->setMaxResults($limit)
