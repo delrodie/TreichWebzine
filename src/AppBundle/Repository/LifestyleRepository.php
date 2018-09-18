@@ -10,6 +10,25 @@ namespace AppBundle\Repository;
  */
 class LifestyleRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * Compteur d'articles
+     */
+    public function compteur($type = null, $statut = null)
+    {
+        if ($type && $statut){
+            return $this->listDesc()
+                        ->select('count(l.id)')
+                        ->where('t.slug = :type')
+                        ->andWhere('l.statut = 1')
+                        ->setParameter('type', $type)
+                        ->getQuery()->getResult()
+                ;
+        }elseif ($statut){
+            return $this->listDesc()->select('count(l.id)')->where('l.statut = 1')->getQuery()->getSingleScalarResult();
+        }else{
+            return $this->listDesc()->select('count(l.id)')->getQuery()->getSingleScalarResult();
+        }
+    }
 
     /**
      * Liste des lifestyle
@@ -24,9 +43,32 @@ class LifestyleRepository extends \Doctrine\ORM\EntityRepository
     }
 
     /**
+     * liste des lifestyles selon le type
+     */
+    public function findTypeDesc($type = null, $statut = null, $limit = null, $offset = null)
+    {
+        if ($type && $statut){
+            return $this->listDesc($limit, $offset)
+                        ->where('t.slug = :type')
+                        ->andWhere('l.statut = 1')
+                        ->setParameter('type', $type)
+                        ->getQuery()->getResult()
+                ;
+        }elseif ($type){
+            return $this->listDesc($limit, $offset)
+                        ->where('t.slug = :type')
+                        ->setParameter('type', $type)
+                        ->getQuery()->getResult()
+                ;
+        }else{
+            return $this->listDesc($limit, $offset)->getQuery()->getResult();
+        }
+    }
+
+    /**
      * Recherche des lifestyle
      */
-    public function listDesc($limit = null, $offset)
+    public function listDesc($limit = null, $offset = null)
     {
         return $this->createQueryBuilder('l')
                     ->addSelect('t')

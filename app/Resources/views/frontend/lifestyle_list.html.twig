@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+{% block title %}Liste des lifestyles de Treichville{% endblock %}
+{% block body %}
+    <div class="page">
+        <div class="page_header clearfix page_margin_top">
+            <div class="page_header_left">
+                <h1 class="page_title">lifestyle</h1>
+            </div>
+            <div class="page_header_right">
+                <ul class="bread_crumb">
+                    <li><a title="Home" href="{{ absolute_url(path('homepage')) }}">Accueil</a></li>
+                    <li class="separator icon_small_arrow right_gray">&nbsp;</li>
+                    <li><a href="#">Actualités</a></li>
+                    <li class="separator icon_small_arrow right_gray">&nbsp;</li>
+                    <li>lifestyle</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page_layout clearfix">
+            <div class="divider_block clearfix">
+                <hr class="divider first">
+                <hr class="divider subheader_arrow">
+                <hr class="divider last">
+            </div>
+            <div class="row">
+                <div class="column column_2_3">
+                    <div class="row">
+                        <ul class="blog column column_1_2">
+                            {% for lifestyle in lifestyle1s %}
+                                <li class="post">
+                                    <a href="{{ absolute_url(path('frontend_lifestyle_show', {'type': lifestyle.type.slug, 'slug': lifestyle.slug})) }}" title="{{ lifestyle.titre }}">
+                                        {% if lifestyle.imageName %}
+                                            <img class="img-responsive" src="{{ asset('uploads/lifestyles/'~ lifestyle.imageName) | imagine_filter('accueil_treich_event') }}" alt="{{ lifestyle.titre }}" />
+                                        {% else %}
+                                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('accueil_treich_event') }}" alt="{{ lifestyle.titre }}">
+                                        {% endif %}
+                                    </a>
+                                    <div class="post_content">
+                                        <h2 class="with_number">
+                                            <a href="{{ absolute_url(path('frontend_lifestyle_show', {'type': lifestyle.type.slug, 'slug': lifestyle.slug})) }}" title="{{ lifestyle.titre }}">{{ lifestyle.titre }}</a>
+                                            <!--<a class="comments_number" href="" title="2 comments">2<span class="arrow_comments"></span></a>-->
+                                        </h2>
+                                        <ul class="post_details">
+                                            <li class="category"><a href="{{ absolute_url(path('frontend_lifestyle_type', {'type': lifestyle.type.slug})) }}" title="{{ lifestyle.type.libelle|upper }}">{{ lifestyle.type.libelle|upper }}</a></li>
+                                            <li class="date">{{ lifestyle.publieLe|date('d M Y') }}</li>
+                                        </ul>
+                                        <p>{{ lifestyle.resume|raw }}</p>
+                                        <a class="read_more" href="{{ absolute_url(path('frontend_lifestyle_show', {'type': lifestyle.type.slug, 'slug': lifestyle.slug})) }}" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <ul class="blog column column_1_2">
+                            {% for lifestyle in lifestyle2s %}
+                                <li class="post">
+                                    <a href="{{ absolute_url(path('frontend_lifestyle_show', {'type': lifestyle.type.slug, 'slug': lifestyle.slug})) }}" title="{{ lifestyle.titre }}">
+                                        {% if lifestyle.imageName %}
+                                            <img class="img-responsive" src="{{ asset('uploads/lifestyles/'~ lifestyle.imageName) | imagine_filter('accueil_treich_event') }}" alt="{{ lifestyle.titre }}" />
+                                        {% else %}
+                                            <img class="img-responsive" src="{{ asset('backoffice/images/user-info.jpg') | imagine_filter('accueil_treich_event') }}" alt="{{ lifestyle.titre }}">
+                                        {% endif %}
+                                    </a>
+                                    <div class="post_content">
+                                        <h2 class="with_number">
+                                            <a href="{{ absolute_url(path('frontend_lifestyle_show', {'type': lifestyle.type.slug, 'slug': lifestyle.slug})) }}" title="{{ lifestyle.titre }}">{{ lifestyle.titre }}</a>
+                                            <!--<a class="comments_number" href="" title="2 comments">2<span class="arrow_comments"></span></a>-->
+                                        </h2>
+                                        <ul class="post_details">
+                                            <li class="category"><a href="{{ absolute_url(path('frontend_lifestyle_type', {'type': lifestyle.type.slug})) }}" title="{{ lifestyle.type.libelle|upper }}">{{ lifestyle.type.libelle|upper }}</a></li>
+                                            <li class="date">{{ lifestyle.publieLe|date('d M Y') }}</li>
+                                        </ul>
+                                        <p>{{ lifestyle.resume|raw }}</p>
+                                        <a class="read_more" href="{{ absolute_url(path('frontend_lifestyle_show', {'type': lifestyle.type.slug, 'slug': lifestyle.slug})) }}" title="Lire la suite"><span class="arrow"></span><span>Lire la suite</span></a>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <ul class="pagination clearfix page_margin_top_section">
+                        <li class="left"><a href="#" title="">&nbsp;</a></li>
+                        <li class="selected"><a href="#" title="">1</a></li>
+                        <li><a href="#" title="">2</a></li>
+                        <li><a href="#" title="">3</a></li>
+                        <li class="right"><a href="#" title="">&nbsp;</a></li>
+                    </ul>
+
+                    <div class="row page_margin_top clearfix">
+                        <img src="{{ absolute_url(asset('frontend/images/header-01.png')) }}" class="img-responsive">
+                    </div>
+
+                </div>
+                <div class="column column_1_3 page_margin_top">
+                    {{ render(url('homepage_droit')) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
