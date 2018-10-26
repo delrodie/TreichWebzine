@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{ conseiller.identite }}{% endblock %}
+{% block body %}
+    <div class="page">
+        <div class="page_layout page_margin_top clearfix">
+            <div class="row page_margin_top">
+                <div class="column column_1_1">
+
+                </div>
+            </div>
+            <hr class="divider page_margin_top">
+            <div class="row page_margin_top">
+                <div class="column column_2_3">
+                    <div class="row">
+                        <div class="post single">
+                            <h1 class="post_title">{{ conseiller.identite }}</h1>
+                            <ul class="post_details clearfix">
+                                <li class="detail category"> <a href="#" title="{{ conseiller.titre|upper }}">{{ conseiller.titre|upper }}</a></li>
+                                <li class="detail date">{{ conseiller.publieLe|date('d-m-Y h:i:s') }}</li>
+                                <li class="detail author">Par <a href="#" title="{{ conseiller.publiePar|title }}">{{ conseiller.publiePar|title }}</a></li>
+                                <!--<li class="detail views">6 254 Views</li>
+                                <li class="detail comments"><a href="#comments_list" class="scroll_to_comments" title="6 Comments">6 Comments</a></li>-->
+                            </ul>
+                            {% if conseiller.imageName %}
+                                <a href="{{ asset('uploads/treichville/'~ conseiller.imageName) | imagine_filter('page_zoom') }}" class="post_image page_margin_top prettyPhoto" title="{{ conseiller.identite }}">
+                                    <img class="img-responsive" src="{{ asset('uploads/treichville/'~ conseiller.imageName) | imagine_filter('page') }}" alt="{{ conseiller.identite }}" />
+                                </a>
+                            {% else %}
+                                <img class="img-responsive" src="{{ asset('backoffice/images/avatar.png') | imagine_filter('page') }}" alt="{{ conseiller.identite }}">
+                            {% endif %}
+                            <div class="post_content page_margin_top_section clearfix">
+                                <div class="">
+                                    <div class="text">
+                                        {{ conseiller.biographie|raw }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row page_margin_top">
+                        <div class="share_box clearfix">
+                            <label>Partager:</label>
+                            <ul class="social_icons colors clearfix">
+                                {% if (conseiller.facebook) %}
+                                    <li>
+                                        <a target="_blank" title="" href="{{ conseiller.facebook }}" class="social_icon facebook">
+                                            &nbsp;
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                {% if (conseiller.twitter) %}
+                                    <li>
+                                        <a target="_blank" title="" href="{{ conseiller.twitter }}" class="social_icon twitter">
+                                            &nbsp;
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row page_margin_top clearfix">
+                        <img src="{{ absolute_url(asset('frontend/images/header-01.png')) }}" class="img-responsive">
+                    </div>
+
+                    <div class="row page_margin_top">
+                        <ul class="taxonomies tags clearfix">
+                            {% for tag in conseiller.tags|split(',') %}
+                                <li><a href="#" title="{{ tag|title }}">{{ tag|upper }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="column column_1_3">
+                    {{ render(url('homepage_droit')) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

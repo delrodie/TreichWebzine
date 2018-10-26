@@ -45,6 +45,20 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Facebook</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(edit_form.facebook)}}
+                                            <span class="help-block">{{ form_errors(edit_form.facebook)}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-12 control-label text-left">Twitter</label>
+                                        <div class="col-sm-12">
+                                            {{ form_widget(edit_form.twitter)}}
+                                            <span class="help-block">{{ form_errors(edit_form.twitter)}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-sm-12 control-label text-left">Telecharger la photo</label>
                                         <div class="col-sm-12">
                                             {{ form_widget(edit_form.imageFile)}}

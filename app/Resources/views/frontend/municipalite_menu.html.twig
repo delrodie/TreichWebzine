@@ -1,0 +1,3 @@
+{% for menu in menus %}
+    <li><a href="{{ absolute_url(path('frontend_municipalite', {'slug': menu.slug})) }}" title="Le Maire">La municipalité</a></li>
+{% endfor %}

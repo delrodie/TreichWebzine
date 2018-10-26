@@ -10,4 +10,51 @@ namespace AppBundle\Repository;
  */
 class CommuneRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * Liste des articles de la commune
+     */
+    public function findList($rubrique = null, $statut = null, $limit = null, $offset = null)
+    {
+        if ($rubrique && $statut){
+            return $this->list($limit, $offset)
+                        ->where('r.slug = rubrique')
+                        ->andWhere('c.statut = 1')
+                        ->setParameter('rubrique', $rubrique)
+                        ->getQuery()->getResult()
+                ;
+        }elseif ($statut){
+            return $this->list($limit, $offset)
+                        ->where('c.statut = 1')
+                        ->getQuery()->getResult()
+                ;
+        }else{
+            return $this->list($limit, $offset)->getQuery()->getResult();
+        }
+    }
+
+    /**
+     * les autres articles de la commune
+     */
+    public function findSimilaire($slug, $limit = null, $offset = null)
+    {
+        return $this->list($limit, $offset)
+                    ->where('c.statut = 1')
+                    ->andWhere('c.slug <> :slug')
+                    ->setParameter('slug', $slug)
+                    ->getQuery()->getResult()
+            ;
+    }
+
+    /**
+     * recherche de la liste des articles
+     */
+    public function list($limit = null, $offset = null)
+    {
+        return $this->createQueryBuilder('c')
+                    ->addSelect('r')
+                    ->leftJoin('c.rubrique', 'r')
+                    ->setFirstResult($offset)
+                    ->setMaxResults($limit)
+            ;
+    }
 }

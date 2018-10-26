@@ -20,4 +20,45 @@ class ConseillerRepository extends \Doctrine\ORM\EntityRepository
                     ->getQuery()->getResult();
             ;
     }
+
+    /**
+     * Liste selon le titre
+     */
+    public function findTitreList($titre = null, $limit = null, $offset = null)
+    {
+        if ($titre === 'adjoint'){
+            return $this->list()
+                ->where('c.titre LIKE :titre')
+                ->orderBy('c.titre', 'ASC')
+                ->setParameter('titre', '%'.$titre.'%')
+                ->getQuery()->getResult()
+                ;
+        }elseif ($titre === 'conseil'){
+            return $this->list()
+                ->where('c.titre LIKE :titre')
+                ->orderBy('c.id', 'ASC')
+                ->setParameter('titre', '%'.$titre.'%')
+                ->getQuery()->getResult()
+                ;
+        }else{
+            return $this->list()
+                ->where('c.titre LIKE :titre')
+                ->orderBy('c.id', 'ASC')
+                ->setParameter('titre', '%'.$titre.'%')
+                ->getQuery()->getResult()
+                ;
+        }
+    }
+
+    /**
+     * Liste des conseils
+     */
+    public function list($limit = null, $offset = null)
+    {
+        return $this->createQueryBuilder('c')
+                    ->orderBy('c.id', 'ASC')
+                    ->setFirstResult($offset)
+                    ->setMaxResults($limit)
+            ;
+    }
 }

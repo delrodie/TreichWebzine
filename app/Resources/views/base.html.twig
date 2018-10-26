@@ -83,7 +83,7 @@
                 <h4>Portail d'informations de la commune</h4>
             </div>
             <div class="column column_2_3">
-                <img src="{{ absolute_url(asset('frontend/images/header-01.png')) }}" class="img-responsive">
+                <img src="{{ absolute_url(asset('frontend/images/publicite-header.jpg')) }}" class="img-responsive">
             </div>
         </div>
     </div>
@@ -106,31 +106,12 @@
                         Treichville
                     </a>
                     <ul>
-                        <li>
-                            <a href="#" title="Deputé">
-                                Député
-                            </a>
-                        </li>
                         <li class="submenu">
                             <a href="#" title="Commune">
                                 Commune
                             </a>
                             <ul>
-                                <li>
-                                    <a href="#" title="Historique">
-                                        Historique
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Blog With Left Sidebar">
-                                        Communauté
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Blog With Left Sidebar">
-                                        Quartier
-                                    </a>
-                                </li>
+                                {{ render(url('frontend_commune_menu')) }}
                             </ul>
                         </li>
                         <li class="submenu">
@@ -138,18 +119,10 @@
                                 Mairie
                             </a>
                             <ul>
+                                {{ render(url('frontend_maire_menu')) }}
+                                {{ render(url('frontend_municipalite_menu')) }}
                                 <li>
-                                    <a href="#" title="Le Maire">
-                                        Le Maire
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="La Municipalité">
-                                        La Municipalité
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" title="Le Conseil Muicipal">
+                                    <a href="{{ absolute_url(path('frontend_conseiller')) }}" title="Le Conseil Muicipal">
                                         Le Conseil Muicipal
                                     </a>
                                 </li>

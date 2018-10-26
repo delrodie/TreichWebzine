@@ -34,7 +34,7 @@ class ConseillerType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                     'placeholder' => "La biographie du conseiller",
-                    'style' => 'width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;'
+                    'style' => 'width: 100%; height: 300px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;'
                 ]
             ])
             //->add('resume')
@@ -44,6 +44,20 @@ class ConseillerType extends AbstractType
                     'placeholder' => "Les mots clés",
                     'data-role' => 'tagsinput',
                 ]
+            ])
+            ->add('facebook', TextType::class,[
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Le compte facebook'
+                ],
+                'required' => false
+            ])
+            ->add('twitter', TextType::class,[
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Le compte twitter'
+                ],
+                'required' => false
             ])
             ->add('statut', CheckboxType::class, [
                 'required' => false

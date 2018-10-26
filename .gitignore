@@ -18,5 +18,5 @@
 /web/uploads/
 /web/media/
 /src/AppBundle/Entity/*~
-.idea/
-/.idea/
+.idea/*
+/.idea/*

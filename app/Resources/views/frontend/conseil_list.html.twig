@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+{% block title %}Le conseil municipal{% endblock %}
+{% block body %}
+    <div class="page">
+        <div class="page_header clearfix page_margin_top">
+            <div class="page_header_left">
+                <h1 class="page_title">Le conseil municipal</h1>
+            </div>
+        </div>
+        <div class="page_layout clearfix">
+            <div class="divider_block clearfix">
+                <hr class="divider first">
+                <hr class="divider subheader_arrow">
+                <hr class="divider last">
+            </div>
+            <div class="row page_margin_top">
+                <div class="column column_2_3">
+                    <div class="row">
+                        <ul class="authors_list rating">
+                            {% for adjoint in adjoints %}
+                                <li class="author clearfix">
+                                    <div class="avatar_block">
+                                        {% if adjoint.imageName %}
+                                            <a href="{{ absolute_url(path('frontend_conseiller_show', {'slug': adjoint.slug })) }}" title="{{ adjoint.identite }}">
+                                                <img class="img-responsive" src="{{ asset('uploads/treichville/'~ adjoint.imageName) | imagine_filter('biographie_minim') }}" alt="{{ adjoint.identite }}" />
+                                            </a>
+                                        {% else %}
+                                            <img class="img-responsive" src="{{ asset('backoffice/images/avatar.png') | imagine_filter('biographie_minim') }}" alt="{{ adjoint.identite }}">
+                                        {% endif %}
+                                    </div>
+                                    <div class="content">
+                                        <ul class="social_icons clearfix">
+                                            {% if (adjoint.facebook) %}
+                                                <li>
+                                                    <a target="_blank" title="" href="{{ adjoint.facebook }}" class="social_icon facebook">
+                                                        &nbsp;
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                            {% if (adjoint.twitter) %}
+                                                <li>
+                                                    <a target="_blank" title="" href="{{ adjoint.twitter }}" class="social_icon twitter">
+                                                        &nbsp;
+                                                    </a>
+                                                </li>
+                                            {% endif %}
+                                        </ul>
+                                        <h6>{{ adjoint.titre }}</h6>
+                                        <h2><a href="{{ absolute_url(path('frontend_conseiller_show', {'slug': adjoint.slug })) }}" title="{{ adjoint.identite }}">{{ adjoint.identite }}</a></h2>
+                                        <p>{{ adjoint.resume|raw }}</p>
+                                        <!--<a href="#" class="more highlight margin_top_15">BIOGRAPHIE</a>-->
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="row page_margin_top_section">
+                        <div class="column_1_1">
+                            <h4 class="box_header">
+                                Les Conseillers Municipaux
+                            </h4>
+                            <div class="horizontal_carousel_container page_margin_top">
+                                <ul class="horizontal_carousel autoplay-1 scroll-1 visible-4 navigation-1 easing-easeInOutQuint duration-750">
+                                    {% for conseiller in conseillers %}
+                                        <li class="author">
+                                            {% if conseiller.imageName %}
+                                                <a href="{{ absolute_url(path('frontend_conseiller_show', {'slug': conseiller.slug })) }}" title="{{ conseiller.identite }}">
+                                                    <img class="img-responsive" src="{{ asset('uploads/treichville/'~ conseiller.imageName) | imagine_filter('biographie_minim') }}" alt="{{ conseiller.identite }}" />
+                                                </a>
+                                            {% else %}
+                                                <img class="img-responsive" src="{{ asset('backoffice/images/avatar.png') | imagine_filter('biographie_minim') }}" alt="{{ conseiller.identite }}">
+                                            {% endif %}
+                                            <h6>{{ conseiller.titre }}</h6>
+                                            <h4><a href="{{ absolute_url(path('frontend_conseiller_show', {'slug': conseiller.slug })) }}" title="{{ conseiller.identite }}">{{ conseiller.identite }}</a></h4>
+                                            <p>{{ conseiller.resume|raw }}</p>
+                                            <ul class="social_icons margin_top_10 clearfix">
+                                                <li>
+                                                    <a target="_blank" title="" href="http://facebook.com/QuanticaLabs" class="social_icon facebook">
+                                                        &nbsp;
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a target="_blank" title="" href="https://twitter.com/QuanticaLabs" class="social_icon twitter">
+                                                        &nbsp;
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column_1_3">
+                    {{ render(url('homepage_droit')) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -63,7 +63,7 @@ class Municipalite
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
-     * @Vich\UploadableField(mapping="actualite_image", fileNameProperty="imageName", size="imageSize", nullable=true)
+     * @Vich\UploadableField(mapping="municipalite_image", fileNameProperty="imageName", size="imageSize", nullable=true)
      *
      * @var File
      */
@@ -139,7 +139,7 @@ class Municipalite
      *
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
      *
-     * @return Actualite
+     * @return Municipalite
      */
     public function setImageFile(File $image = null)
     {

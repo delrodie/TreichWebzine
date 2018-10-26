@@ -10,4 +10,27 @@ namespace AppBundle\Repository;
  */
 class MaireRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * le dernier maire actif enregistré
+     */
+    public function findList($statut = null, $limit = null, $offset)
+    {
+        if ($statut){
+            return $this->list($limit, $offset)->where('m.statut = 1')->getQuery()->getResult();
+        }else {
+            return $this->list($limit, $offset)->getQuery()->getResult();
+        }
+    }
+
+    /**
+     * Liste des maires
+     */
+    public function list($limit = null, $offset = null)
+    {
+        return $this->createQueryBuilder('m')
+                    ->orderBy('m.id', 'DESC')
+                    ->setFirstResult($offset)
+                    ->setMaxResults($limit)
+            ;
+    }
 }

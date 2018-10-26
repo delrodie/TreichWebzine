@@ -1,0 +1,3 @@
+{% for menu in menus %}
+    <li><a href="{{ absolute_url(path('frontend_commune_show', {'slug': menu.slug})) }}" title="{{ menu.rubrique.libelle }}"> {{ menu.rubrique.libelle }}</a></li>
+{% endfor %}
