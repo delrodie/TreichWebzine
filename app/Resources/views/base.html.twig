@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="#" class="social_icon twitter" title="twitter">                        &nbsp;
+                    <a target="_blank" href="https://twitter.com/treichwebzine" class="social_icon twitter" title="twitter">                        &nbsp;
                     </a>
                 </li>
                 <li>
@@ -57,7 +57,7 @@
                     </a>
                 </li>
                 <li>
-                    <a title="" href="#" class="social_icon instagram"></a>
+                    <a target="_blank" title="Suivez-nous sur Instagram" href="https://www.instagram.com/treichwebzine/" class="social_icon instagram"></a>
                 </li>
 
             </ul>
@@ -352,7 +352,7 @@
                             </a>
                         </li>
                         <li>
-                            <a target="_blank" title="" href="https://twitter.com/" class="social_icon twitter">
+                            <a target="_blank" title="Suivez-nous sur Twitter" href="https://twitter.com/treichwebzine" class="social_icon twitter">
                                 &nbsp;
                             </a>
                         </li>
@@ -362,10 +362,7 @@
                             </a>
                         </li>
                         <li>
-                            <a title="" href="#" class="social_icon instagram"></a>
-                        </li>
-                        <li>
-                            <a title="" href="#" class="social_icon pinterest"></a>
+                            <a title="Suivez-nous sur Instagramm" href="https://www.instagram.com/treichwebzine/" class="social_icon instagram" target="_blank"></a>
                         </li>
                     </ul>
                 </div>
@@ -396,28 +393,9 @@
                     </div>
                 </div>
                 <div class="column column_1_3">
-                    <h4 class="box_header">Nos Tweets</h4>
                     <div class="vertical_carousel_container clearfix">
-                        <ul class="blog small vertical_carousel autoplay-1 scroll-1 navigation-1 easing-easeInOutQuint duration-750">
-                            <li class="post">
-                                <div class="text">
-                                    <p>TreichWebzine est une plateforme web faisabt la promotion de Treichville.</p>
-                                </div>
-                                <div class="info-box">
-                                    <i class="fa fa-twitter"></i>
-                                    <strong><a href="#">@treichwebzine</a></strong>
-                                </div>
-                            </li>
-                            <li class="post">
-                                <div class="text">
-                                    <p>Treichville est une commune cosmopolite</p>
-                                </div>
-                                <div class="info-box">
-                                    <i class="fa fa-twitter"></i>
-                                    <strong><a href="#">@treichwebzine</a></strong>
-                                </div>
-                            </li>
-                        </ul>
+                        <a class="twitter-timeline" data-height="400" data-theme="dark" href="https://twitter.com/treichwebzine?ref_src=twsrc%5Etfw"><h4 class="box_header">Tweets by treichwebzine</h4></a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                 </div>
             </div>
@@ -496,6 +474,15 @@
         js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+<script>
+    twttr.widgets.createTimeline(
+            {
+                sourceType: "profile",
+                screenName: "treichwebzine"
+            },
+            document.getElementById("container")
+    );
+</script>
 
 </body>
 
